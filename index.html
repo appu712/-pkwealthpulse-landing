@@ -105,8 +105,9 @@
   .cmp-table .neutral{color:#ffa726;font-weight:600;}
   .cmp-wrap{overflow-x:auto;margin-top:8px;}
 
-  .faq{max-width:760px;}
-  details{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin-bottom:12px;}
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;align-items:start;}
+  @media(max-width:760px){.faq-grid{grid-template-columns:1fr;}}
+  details{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px 22px;}
   summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;}
   summary::-webkit-details-marker{display:none;}
   summary::after{content:"+";color:var(--accent);font-size:1.3rem;font-weight:400;}
@@ -352,34 +353,36 @@
 </section>
 
 <section class="faq" id="faq">
-  <div class="wrap faq">
+  <div class="wrap">
     <div class="kicker reveal">FAQ</div>
     <h2 class="reveal">Common questions</h2>
     <div style="height:8px"></div>
-    <details class="reveal">
-      <summary>How do I import my CAMS or KFintech CAS into a portfolio tracker?</summary>
-      <p>Download your Consolidated Account Statement (CAS) from MF Central, CAMS or KFintech as a text or PDF file, then drop it into PK WealthPulse's Import screen. It reads the portfolio summary — fund name (AMFI-verified), folio number, cost value, market value and unit balance — directly from the statement, so you don't retype anything.</p>
-    </details>
-    <details class="reveal">
-      <summary>Can I track NSDL/CDSL demat holdings alongside mutual funds?</summary>
-      <p>Yes. Broker contract notes and demat statements (NSDL and CDSL, including bonds and NCDs held as DEBT-sector rows) import the same way as CAS files, so stocks, ETFs and mutual funds sit in one combined portfolio view instead of separate apps.</p>
-    </details>
-    <details class="reveal">
-      <summary>Is there a family finance tracker that doesn't upload data to the cloud?</summary>
-      <p>PK WealthPulse stores every record — investments, bank accounts, loans, credit cards, insurance policies — locally on your Windows PC. There is no server sync and no cloud account behind your financial data, which matters if you'd rather not hand consolidated statements of your entire family's net worth to a third-party server.</p>
-    </details>
-    <details class="reveal">
-      <summary>Does PK WealthPulse work on Windows, Mac and Linux?</summary>
-      <p>Windows is available now for instant download from the Microsoft Store. Mac and Linux builds are produced on request — pick your platform in the license request form below and we'll follow up once it's ready.</p>
-    </details>
-    <details class="reveal">
-      <summary>What license types are available and what do they cost?</summary>
-      <p>Trial (14 days) is free. Pro (365 days) is ₹1,499/yr, Max (2 years) is ₹2,499 — payment details for Pro/Max are shared by email once your request is verified. Verified requests get a response within 24 hours on weekdays, 48 hours on weekends; if it's taking longer than that, drop an email to <a href="mailto:pkwealthpulse@gmail.com">pkwealthpulse@gmail.com</a> and we'll sort it out.</p>
-    </details>
-    <details class="reveal">
-      <summary>How does device activation work — can I use one license on multiple devices?</summary>
-      <p>Each license activates on up to 2 devices at a time. Adding a 3rd prompts you to replace one of the existing activations from within the app — no need to contact support for routine device swaps. If you ever get stuck, email <a href="mailto:pkwealthpulse@gmail.com">pkwealthpulse@gmail.com</a> for help.</p>
-    </details>
+    <div class="faq-grid">
+      <details class="reveal">
+        <summary>How do I import my CAMS or KFintech CAS into a portfolio tracker?</summary>
+        <p>Download your Consolidated Account Statement (CAS) from MF Central, CAMS or KFintech as a text or PDF file, then drop it into PK WealthPulse's Import screen. It reads the portfolio summary — fund name (AMFI-verified), folio number, cost value, market value and unit balance — directly from the statement, so you don't retype anything.</p>
+      </details>
+      <details class="reveal">
+        <summary>Does PK WealthPulse work on Windows, Mac and Linux?</summary>
+        <p>Windows is available now for instant download from the Microsoft Store. Mac and Linux builds are produced on request — pick your platform in the license request form below and we'll follow up once it's ready.</p>
+      </details>
+      <details class="reveal">
+        <summary>Can I track NSDL/CDSL demat holdings alongside mutual funds?</summary>
+        <p>Yes. Broker contract notes and demat statements (NSDL and CDSL, including bonds and NCDs held as DEBT-sector rows) import the same way as CAS files, so stocks, ETFs and mutual funds sit in one combined portfolio view instead of separate apps.</p>
+      </details>
+      <details class="reveal">
+        <summary>What license types are available and what do they cost?</summary>
+        <p>Trial (14 days) is free. Pro (365 days) is ₹1,499/yr, Max (2 years) is ₹2,499 — payment details for Pro/Max are shared by email once your request is verified. Verified requests get a response within 24 hours on weekdays, 48 hours on weekends; if it's taking longer than that, drop an email to <a href="mailto:pkwealthpulse@gmail.com">pkwealthpulse@gmail.com</a> and we'll sort it out.</p>
+      </details>
+      <details class="reveal">
+        <summary>Is there a family finance tracker that doesn't upload data to the cloud?</summary>
+        <p>PK WealthPulse stores every record — investments, bank accounts, loans, credit cards, insurance policies — locally on your Windows PC. There is no server sync and no cloud account behind your financial data, which matters if you'd rather not hand consolidated statements of your entire family's net worth to a third-party server.</p>
+      </details>
+      <details class="reveal">
+        <summary>How does device activation work — can I use one license on multiple devices?</summary>
+        <p>Each license activates on up to 2 devices at a time. Adding a 3rd prompts you to replace one of the existing activations from within the app — no need to contact support for routine device swaps. If you ever get stuck, email <a href="mailto:pkwealthpulse@gmail.com">pkwealthpulse@gmail.com</a> for help.</p>
+      </details>
+    </div>
   </div>
 </section>
 
