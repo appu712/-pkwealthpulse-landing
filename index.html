@@ -8,12 +8,12 @@
 <meta property="og:title" content="PK WealthPulse — Family Finance Dashboard for India">
 <meta property="og:description" content="Import your CAS, demat and NPS statements automatically. Every asset, every family member, one dashboard. Your data stays on your device.">
 <meta property="og:image" content="assets/screenshot-portfolio.jpg">
-<meta name="theme-color" content="#0a0f1c">
+<meta name="theme-color" content="#0A0A0A">
 <link rel="icon" href="assets/logo.png">
 <style>
   :root{
-    --bg:#0a0f1c; --bg2:#0d1426; --panel:rgba(255,255,255,.03); --border:rgba(255,255,255,.08);
-    --text:#eef2fb; --muted:#8e9bb8; --accent:#2dd4a7; --accent2:#6c8cff;
+    --bg:#0A0A0A; --bg2:#141414; --panel:#141414; --border:#2A2A2A;
+    --text:#FFFFFF; --muted:#B8BFC8; --accent:#00D09C; --accent2:#00B589;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -22,7 +22,7 @@
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 
   /* nav */
-  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,15,28,.75);border-bottom:1px solid var(--border);}
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,10,10,.75);border-bottom:1px solid var(--border);}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;}
   .brand img{width:30px;height:30px;border-radius:8px;}
@@ -34,8 +34,8 @@
   /* hero */
   header.hero{position:relative;padding:100px 0 60px;text-align:center;overflow:hidden;}
   header.hero::before{content:"";position:absolute;top:-260px;left:50%;transform:translateX(-50%);width:900px;height:640px;
-    background:radial-gradient(circle,rgba(45,212,167,.16),rgba(108,140,255,.10) 45%,transparent 70%);pointer-events:none;}
-  .eyebrow{display:inline-block;font-size:.78rem;font-weight:600;color:var(--accent);background:rgba(45,212,167,.1);border:1px solid rgba(45,212,167,.3);
+    background:radial-gradient(circle,rgba(0,208,156,.16),rgba(0,181,137,.10) 45%,transparent 70%);pointer-events:none;}
+  .eyebrow{display:inline-block;font-size:.78rem;font-weight:600;color:var(--accent);background:rgba(0,208,156,.1);border:1px solid rgba(0,208,156,.3);
     padding:6px 14px;border-radius:999px;margin-bottom:24px;letter-spacing:.02em;}
   h1{font-size:clamp(2.1rem,4.4vw,3.2rem);margin:0 0 18px;line-height:1.15;letter-spacing:-.02em;font-weight:800;position:relative;}
   h1 .grad{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;}
@@ -48,8 +48,8 @@
 
   /* browser frame */
   .frame{margin:56px auto 0;max-width:920px;position:relative;}
-  .frame-chrome{background:#161d30;border:1px solid var(--border);border-radius:14px 14px 0 0;padding:11px 16px;display:flex;gap:7px;}
-  .frame-chrome span{width:11px;height:11px;border-radius:50%;background:#3a4560;}
+  .frame-chrome{background:#1C1C1C;border:1px solid var(--border);border-radius:14px 14px 0 0;padding:11px 16px;display:flex;gap:7px;}
+  .frame-chrome span{width:11px;height:11px;border-radius:50%;background:#383838;}
   .frame img{width:100%;display:block;border-radius:0 0 14px 14px;border:1px solid var(--border);border-top:none;}
   .frame{box-shadow:0 30px 80px -20px rgba(0,0,0,.6);}
 
@@ -60,8 +60,8 @@
 
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;}
   .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px;transition:transform .2s ease,border-color .2s ease;}
-  .card:hover{transform:translateY(-3px);border-color:rgba(45,212,167,.35);}
-  .icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,rgba(45,212,167,.18),rgba(108,140,255,.18));
+  .card:hover{transform:translateY(-3px);border-color:rgba(0,208,156,.35);}
+  .icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,rgba(0,208,156,.18),rgba(0,181,137,.18));
     display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
   .icon svg{width:19px;height:19px;color:var(--accent);}
   .card h3{margin:0 0 8px;font-size:1.05rem;}
@@ -88,7 +88,7 @@
 
   /* license request form (custom UI, posts to Google Forms backend) */
   .license-card{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));border:1px solid var(--border);border-radius:20px;padding:44px;max-width:720px;margin:0 auto;position:relative;overflow:hidden;}
-  .license-card::before{content:"";position:absolute;top:-160px;right:-160px;width:340px;height:340px;background:radial-gradient(circle,rgba(108,140,255,.14),transparent 70%);pointer-events:none;}
+  .license-card::before{content:"";position:absolute;top:-160px;right:-160px;width:340px;height:340px;background:radial-gradient(circle,rgba(0,181,137,.14),transparent 70%);pointer-events:none;}
   .field{margin-bottom:20px;position:relative;}
   .field label{display:block;font-size:.82rem;font-weight:600;color:var(--muted);margin-bottom:8px;}
   .field input{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--text);font-size:.95rem;font-family:inherit;transition:border-color .15s,background .15s;}
@@ -107,7 +107,7 @@
   .form-note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:16px;}
   .success-state{display:none;text-align:center;padding:20px 0;}
   .success-state.show{display:block;}
-  .success-state .tick{width:56px;height:56px;border-radius:50%;background:rgba(45,212,167,.14);border:1px solid rgba(45,212,167,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+  .success-state .tick{width:56px;height:56px;border-radius:50%;background:rgba(0,208,156,.14);border:1px solid rgba(0,208,156,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
   .success-state .tick svg{width:26px;height:26px;color:var(--accent);}
   .success-state h3{margin:0 0 10px;font-size:1.3rem;}
   .success-state p{color:var(--muted);max-width:440px;margin:0 auto;font-size:.95rem;}
@@ -289,7 +289,7 @@
   </div>
 
   <div class="contact-row reveal">
-    <span>Support: <a href="mailto:pkwealthpulse@gmail.com">pkwealthpulse@gmail.com</a></span>
+    <span>Support: <a href="mailto:pkwealthpulse@gmail.com">pkwealthpulse@gmail.com</a> · <a href="mailto:pkwealthpulse@outlook.com">pkwealthpulse@outlook.com</a></span>
     <span>Contact: Praveen Kumar K</span>
   </div>
 </section>
