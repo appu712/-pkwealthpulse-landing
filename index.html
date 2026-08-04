@@ -8,107 +8,205 @@
 <meta property="og:title" content="PK WealthPulse — Family Finance Dashboard for India">
 <meta property="og:description" content="Import your CAS, demat and NPS statements automatically. Every asset, every family member, one dashboard. Your data stays on your device.">
 <meta property="og:image" content="assets/screenshot-import.png">
-<meta name="theme-color" content="#0b1220">
+<meta name="theme-color" content="#0a0f1c">
+<link rel="icon" href="assets/logo.png">
 <style>
   :root{
-    --bg:#0b1220; --panel:#121b2e; --panel2:#0f1729; --border:#22314d;
-    --text:#e8edf7; --muted:#93a2bd; --accent:#22c58b; --accent2:#5b8cff;
+    --bg:#0a0f1c; --bg2:#0d1426; --panel:rgba(255,255,255,.03); --border:rgba(255,255,255,.08);
+    --text:#eef2fb; --muted:#8e9bb8; --accent:#2dd4a7; --accent2:#6c8cff;
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.55;}
-  a{color:var(--accent2);}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
-  header.hero{padding:64px 0 48px;text-align:center;}
-  .logo{width:72px;height:72px;border-radius:16px;margin-bottom:20px;}
-  h1{font-size:2.4rem;margin:0 0 16px;line-height:1.2;}
-  .sub{color:var(--muted);font-size:1.15rem;max-width:640px;margin:0 auto 28px;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,15,28,.75);border-bottom:1px solid var(--border);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;}
+  .brand img{width:30px;height:30px;border-radius:8px;}
+  .navlinks{display:flex;gap:28px;font-size:.9rem;color:var(--muted);}
+  .navlinks a:hover{color:var(--text);}
+  .navcta{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06111d;font-weight:700;font-size:.85rem;padding:9px 18px;border-radius:999px;}
+  @media(max-width:640px){.navlinks{display:none;}}
+
+  /* hero */
+  header.hero{position:relative;padding:100px 0 60px;text-align:center;overflow:hidden;}
+  header.hero::before{content:"";position:absolute;top:-260px;left:50%;transform:translateX(-50%);width:900px;height:640px;
+    background:radial-gradient(circle,rgba(45,212,167,.16),rgba(108,140,255,.10) 45%,transparent 70%);pointer-events:none;}
+  .eyebrow{display:inline-block;font-size:.78rem;font-weight:600;color:var(--accent);background:rgba(45,212,167,.1);border:1px solid rgba(45,212,167,.3);
+    padding:6px 14px;border-radius:999px;margin-bottom:24px;letter-spacing:.02em;}
+  h1{font-size:clamp(2.1rem,4.4vw,3.2rem);margin:0 0 18px;line-height:1.15;letter-spacing:-.02em;font-weight:800;position:relative;}
+  h1 .grad{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .sub{color:var(--muted);font-size:1.15rem;max-width:620px;margin:0 auto 34px;position:relative;}
+  .cta-row{display:flex;flex-direction:column;align-items:center;gap:14px;position:relative;}
   .cta img{height:52px;}
-  .cta{margin-bottom:8px;}
-  .cta-note{color:var(--muted);font-size:.85rem;}
-  .shot{width:100%;max-width:900px;border-radius:12px;border:1px solid var(--border);margin:40px auto 0;display:block;box-shadow:0 20px 60px rgba(0,0,0,.4);}
-  section{padding:56px 0;border-top:1px solid var(--border);}
-  h2{font-size:1.6rem;margin-bottom:8px;}
-  .lede{color:var(--muted);margin-bottom:32px;max-width:640px;}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
-  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px;}
+  .trust{display:flex;gap:22px;flex-wrap:wrap;justify-content:center;color:var(--muted);font-size:.85rem;}
+  .trust span{display:flex;align-items:center;gap:6px;}
+  .trust svg{width:14px;height:14px;color:var(--accent);flex-shrink:0;}
+
+  /* browser frame */
+  .frame{margin:56px auto 0;max-width:920px;position:relative;}
+  .frame-chrome{background:#161d30;border:1px solid var(--border);border-radius:14px 14px 0 0;padding:11px 16px;display:flex;gap:7px;}
+  .frame-chrome span{width:11px;height:11px;border-radius:50%;background:#3a4560;}
+  .frame img{width:100%;display:block;border-radius:0 0 14px 14px;border:1px solid var(--border);border-top:none;}
+  .frame{box-shadow:0 30px 80px -20px rgba(0,0,0,.6);}
+
+  section{padding:88px 0;border-top:1px solid var(--border);}
+  .kicker{color:var(--accent);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;}
+  h2{font-size:clamp(1.5rem,3vw,2rem);margin:0 0 10px;letter-spacing:-.01em;}
+  .lede{color:var(--muted);margin-bottom:44px;max-width:600px;font-size:1.05rem;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px;transition:transform .2s ease,border-color .2s ease;}
+  .card:hover{transform:translateY(-3px);border-color:rgba(45,212,167,.35);}
+  .icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,rgba(45,212,167,.18),rgba(108,140,255,.18));
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .icon svg{width:19px;height:19px;color:var(--accent);}
   .card h3{margin:0 0 8px;font-size:1.05rem;}
   .card p{margin:0;color:var(--muted);font-size:.92rem;}
-  .seo-block{max-width:720px;}
-  .seo-block h2{font-size:1.3rem;}
-  .seo-block p{color:var(--muted);}
-  footer{padding:40px 0;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);}
-  footer .cta{margin:16px 0;}
+
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;text-align:center;}
+  .stat b{display:block;font-size:2rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .stat span{color:var(--muted);font-size:.85rem;}
+
+  .faq{max-width:760px;}
+  details{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin-bottom:12px;}
+  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";color:var(--accent);font-size:1.3rem;font-weight:400;}
+  details[open] summary::after{content:"–";}
+  details p{color:var(--muted);margin:14px 0 0;font-size:.95rem;}
+
+  footer{padding:48px 0 40px;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);}
+  footer .brand{justify-content:center;margin-bottom:18px;color:var(--text);}
+  footer .cta img{height:44px;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
 </style>
 </head>
 <body>
 
+<nav>
+  <div class="wrap">
+    <div class="brand"><img src="assets/logo.png" alt=""> PK WealthPulse</div>
+    <div class="navlinks">
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="navcta" href="https://get.microsoft.com/installer/download/9NGMX7VC3BJR?referrer=appbadge">Download Free</a>
+  </div>
+</nav>
+
 <header class="hero wrap">
-  <img src="assets/logo.png" alt="PK WealthPulse logo" class="logo">
-  <h1>One dashboard for your entire family's money</h1>
-  <p class="sub">Mutual funds, stocks, bonds, insurance, loans, NPS, PF and gold — imported straight from your CAMS/KFintech/MF Central CAS, broker contract notes and demat statements. Runs on your PC. Your data never leaves it.</p>
-  <div class="cta">
-    <a href="https://get.microsoft.com/installer/download/9NGMX7VC3BJR?referrer=appbadge" target="_self">
+  <span class="eyebrow">Free · Windows · 100% Local Data</span>
+  <h1>One dashboard for<br><span class="grad">your entire family's money</span></h1>
+  <p class="sub">Mutual funds, stocks, bonds, insurance, loans, NPS, PF and gold — imported straight from your CAMS/KFintech/MF Central CAS, broker contract notes and demat statements.</p>
+  <div class="cta-row">
+    <a class="cta" href="https://get.microsoft.com/installer/download/9NGMX7VC3BJR?referrer=appbadge">
       <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get PK WealthPulse from the Microsoft Store">
     </a>
+    <div class="trust">
+      <span><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a1 1 0 0 1 1 1v1.06a7 7 0 0 1 5.94 5.94H18a1 1 0 1 1 0 2h-1.06A7 7 0 0 1 11 17.94V19a1 1 0 1 1-2 0v-1.06A7 7 0 0 1 3.06 12H2a1 1 0 1 1 0-2h1.06A7 7 0 0 1 9 4.06V3a1 1 0 0 1 1-1Zm0 4a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg> No signup required</span>
+      <span><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1 3 4v5c0 5 3 8 7 10 4-2 7-5 7-10V4l-7-3Z"/></svg> Nothing leaves your device</span>
+      <span><svg viewBox="0 0 20 20" fill="currentColor"><path d="M6 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6Zm2 3h4a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2Z"/></svg> One-time install</span>
+    </div>
   </div>
-  <p class="cta-note">Free download · Windows · no signup, no cloud account required</p>
-  <img src="assets/screenshot-import.png" alt="PK WealthPulse CAS import screen — upload CAMS, KFintech or MF Central statement" class="shot">
+  <div class="frame reveal">
+    <div class="frame-chrome"><span></span><span></span><span></span></div>
+    <img src="assets/screenshot-import.png" alt="PK WealthPulse CAS import screen — upload CAMS, KFintech or MF Central statement">
+  </div>
 </header>
 
 <section class="wrap">
-  <h2>Everything your family's finances need, in one place</h2>
-  <p class="lede">Not just a portfolio tracker — banks, loans, credit cards, insurance and budget live alongside your investments.</p>
+  <div class="stats reveal">
+    <div class="stat"><b>8+</b><span>asset types tracked</span></div>
+    <div class="stat"><b>100%</b><span>data stays on-device</span></div>
+    <div class="stat"><b>0</b><span>spreadsheets needed</span></div>
+    <div class="stat"><b>1</b><span>view for the whole family</span></div>
+  </div>
+</section>
+
+<section class="wrap" id="features">
+  <div class="kicker reveal">Features</div>
+  <h2 class="reveal">Everything your family's finances need, in one place</h2>
+  <p class="lede reveal">Not just a portfolio tracker — banks, loans, credit cards, insurance and budget live alongside your investments.</p>
   <div class="grid">
-    <div class="card">
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div>
       <h3>Smart statement import</h3>
-      <p>Upload your CAMS, KFintech or MF Central consolidated account statement (CAS), broker contract notes, or demat holding statement — parsed automatically, no manual data entry.</p>
+      <p>Upload your CAMS, KFintech or MF Central CAS, broker contract notes, or demat holding statement — parsed automatically, no manual data entry.</p>
     </div>
-    <div class="card">
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="8" r="2.5"/><path d="M3 21v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1M16 15a4 4 0 0 1 4 4v1"/></svg></div>
       <h3>Whole family, one view</h3>
       <p>Track accounts across every family member and see combined net worth, not just your own portfolio.</p>
     </div>
-    <div class="card">
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
       <h3>Every asset type</h3>
       <p>Mutual funds, stocks, bonds/NCDs, NPS, PF, gold, fixed deposits, and demat accounts — domestic and international.</p>
     </div>
-    <div class="card">
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div>
       <h3>Banks, loans &amp; insurance too</h3>
-      <p>Savings accounts, credit cards, loan EMIs and insurance policies tracked alongside your investments — one dashboard, not five spreadsheets.</p>
+      <p>Savings accounts, credit cards, loan EMIs and insurance policies tracked alongside your investments.</p>
     </div>
-    <div class="card">
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4Z"/></svg></div>
       <h3>100% local data</h3>
-      <p>Everything is stored on your device. Nothing is uploaded to any server — your holdings, balances and policy numbers stay private.</p>
+      <p>Everything is stored on your device. Nothing is uploaded to any server — your balances and policy numbers stay private.</p>
     </div>
-    <div class="card">
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
       <h3>Research, one click away</h3>
-      <p>Jump straight to Screener.in, Tickertape, MoneyControl, TradingView or StockEdge for deeper analysis on any holding.</p>
+      <p>Jump straight to Screener.in, Tickertape, MoneyControl, TradingView or StockEdge for deeper analysis.</p>
     </div>
   </div>
 </section>
 
 <section class="wrap">
-  <img src="assets/screenshot-research.png" alt="PK WealthPulse stock research shortcuts — Screener, Tickertape, MoneyControl, TradingView" class="shot">
+  <div class="frame reveal">
+    <div class="frame-chrome"><span></span><span></span><span></span></div>
+    <img src="assets/screenshot-research.png" alt="PK WealthPulse stock research shortcuts — Screener, Tickertape, MoneyControl, TradingView">
+  </div>
 </section>
 
-<section class="wrap seo-block">
-  <h2>How do I import my CAMS or KFintech CAS into a portfolio tracker?</h2>
-  <p>Download your Consolidated Account Statement (CAS) from MF Central, CAMS or KFintech as a text or PDF file, then drop it into PK WealthPulse's Import screen. It reads the portfolio summary — fund name (AMFI-verified), folio number, cost value, market value and unit balance — directly from the statement, so you don't retype anything from your mutual fund holdings.</p>
-
-  <h2>Can I track NSDL/CDSL demat holdings alongside mutual funds?</h2>
-  <p>Yes. Broker contract notes and demat statements (NSDL and CDSL, including bonds and NCDs held as DEBT-sector rows) import the same way as CAS files, so your stocks, ETFs and mutual funds sit in one combined portfolio view instead of separate apps.</p>
-
-  <h2>Is there a family finance tracker that doesn't upload data to the cloud?</h2>
-  <p>PK WealthPulse stores every record — investments, bank accounts, loans, credit cards, insurance policies — locally on your Windows PC. There is no server sync and no cloud account behind your financial data, which matters if you'd rather not hand consolidated statements of your entire family's net worth to a third-party server.</p>
+<section class="wrap faq" id="faq">
+  <div class="kicker reveal">FAQ</div>
+  <h2 class="reveal">Common questions</h2>
+  <p class="lede reveal">&nbsp;</p>
+  <details class="reveal">
+    <summary>How do I import my CAMS or KFintech CAS into a portfolio tracker?</summary>
+    <p>Download your Consolidated Account Statement (CAS) from MF Central, CAMS or KFintech as a text or PDF file, then drop it into PK WealthPulse's Import screen. It reads the portfolio summary — fund name (AMFI-verified), folio number, cost value, market value and unit balance — directly from the statement, so you don't retype anything.</p>
+  </details>
+  <details class="reveal">
+    <summary>Can I track NSDL/CDSL demat holdings alongside mutual funds?</summary>
+    <p>Yes. Broker contract notes and demat statements (NSDL and CDSL, including bonds and NCDs held as DEBT-sector rows) import the same way as CAS files, so stocks, ETFs and mutual funds sit in one combined portfolio view instead of separate apps.</p>
+  </details>
+  <details class="reveal">
+    <summary>Is there a family finance tracker that doesn't upload data to the cloud?</summary>
+    <p>PK WealthPulse stores every record — investments, bank accounts, loans, credit cards, insurance policies — locally on your Windows PC. There is no server sync and no cloud account behind your financial data, which matters if you'd rather not hand consolidated statements of your entire family's net worth to a third-party server.</p>
+  </details>
 </section>
 
 <footer class="wrap">
+  <div class="brand"><img src="assets/logo.png" alt=""> PK WealthPulse</div>
   <div class="cta">
-    <a href="https://get.microsoft.com/installer/download/9NGMX7VC3BJR?referrer=appbadge" target="_self">
-      <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get PK WealthPulse from the Microsoft Store" style="height:44px;">
+    <a href="https://get.microsoft.com/installer/download/9NGMX7VC3BJR?referrer=appbadge">
+      <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get PK WealthPulse from the Microsoft Store">
     </a>
   </div>
   <p>© 2026 PK WealthPulse. All rights reserved.</p>
 </footer>
 
+<script>
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:.1});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
 </body>
 </html>
