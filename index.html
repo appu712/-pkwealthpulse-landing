@@ -40,8 +40,11 @@
   h1{font-size:clamp(2.1rem,4.4vw,3.2rem);margin:0 0 18px;line-height:1.15;letter-spacing:-.02em;font-weight:800;position:relative;}
   h1 .grad{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;}
   .sub{color:var(--muted);font-size:1.15rem;max-width:620px;margin:0 auto 34px;position:relative;}
-  .cta-row{display:flex;flex-direction:column;align-items:center;gap:14px;position:relative;}
+  .cta-row{display:flex;flex-direction:column;align-items:center;gap:16px;position:relative;}
   .cta img{height:52px;}
+  .btn-primary{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06111d;font-weight:800;font-size:1.05rem;padding:16px 34px;border-radius:999px;box-shadow:0 8px 24px rgba(0,208,156,.28);transition:transform .15s,box-shadow .15s;}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,208,156,.38);}
+  .or-divider{color:var(--muted);font-size:.8rem;}
   .trust{display:flex;gap:22px;flex-wrap:wrap;justify-content:center;color:var(--muted);font-size:.85rem;}
   .trust span{display:flex;align-items:center;gap:6px;}
   .trust svg{width:14px;height:14px;color:var(--accent);flex-shrink:0;}
@@ -63,15 +66,26 @@
   @media(max-width:560px){.grid{grid-template-columns:1fr;}}
   .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px;transition:transform .2s ease,border-color .2s ease;}
   .card:hover{transform:translateY(-3px);border-color:rgba(0,208,156,.35);}
-  .icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,rgba(0,208,156,.18),rgba(0,181,137,.18));
-    display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
-  .icon svg{width:19px;height:19px;color:var(--accent);}
+  .icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(0,208,156,.2),rgba(0,181,137,.2));
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .icon svg{width:21px;height:21px;color:var(--accent);}
+  .icon.blue{background:linear-gradient(135deg,rgba(79,195,247,.2),rgba(2,119,189,.2));}
+  .icon.blue svg{color:#4FC3F7;}
+  .icon.purple{background:linear-gradient(135deg,rgba(179,157,219,.2),rgba(126,87,194,.2));}
+  .icon.purple svg{color:#B39DDB;}
+  .icon.orange{background:linear-gradient(135deg,rgba(255,167,38,.2),rgba(245,124,0,.2));}
+  .icon.orange svg{color:#FFA726;}
+  .icon.red{background:linear-gradient(135deg,rgba(255,77,77,.2),rgba(211,47,47,.2));}
+  .icon.red svg{color:#FF4D4D;}
   .card h3{margin:0 0 8px;font-size:1.05rem;}
   .card p{margin:0;color:var(--muted);font-size:.92rem;}
 
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:24px;text-align:center;}
-  .stat b{display:block;font-size:2rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;}
-  .stat span{color:var(--muted);font-size:.85rem;display:block;max-width:220px;margin:0 auto;}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.stats{grid-template-columns:1fr;}}
+  .stat{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:center;}
+  .stat b{display:block;font-size:2.1rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px;}
+  .stat span{color:var(--muted);font-size:.85rem;display:block;}
 
   .callout{background:rgba(0,208,156,.06);border:1px solid rgba(0,208,156,.3);border-left:4px solid var(--accent);border-radius:12px;padding:28px 32px;width:100%;margin:0;}
   .callout-kicker{color:var(--accent);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
@@ -158,6 +172,8 @@
   <h1>Your Wealth. Your Device.<br><span class="grad">Nobody Else's.</span></h1>
   <p class="sub">The only wealth dashboard architected so that <strong>we cannot see your data even if we wanted to.</strong> Mutual funds, stocks, bonds, insurance, loans, NPS, PF and gold — imported straight from your CAMS/KFintech/MF Central CAS, broker and demat statements. No cloud, no server, no breach to worry about — ever.</p>
   <div class="cta-row">
+    <a class="btn-primary" href="#get-license">Get Started Free →</a>
+    <span class="or-divider">or</span>
     <a class="cta" href="https://get.microsoft.com/installer/download/9NGMX7VC3BJR?referrer=appbadge">
       <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get PK WealthPulse from the Microsoft Store">
     </a>
@@ -195,22 +211,22 @@
   <p class="lede reveal">Not just a portfolio tracker — banks, loans, credit cards, insurance and budget live alongside your investments.</p>
   <div class="grid">
     <div class="card reveal">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div>
+      <div class="icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div>
       <h3>Smart statement import</h3>
       <p>Upload your CAMS, KFintech or MF Central CAS, broker contract notes, or demat holding statement — parsed automatically, no manual data entry.</p>
     </div>
     <div class="card reveal">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="8" r="2.5"/><path d="M3 21v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1M16 15a4 4 0 0 1 4 4v1"/></svg></div>
+      <div class="icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="8" r="2.5"/><path d="M3 21v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1M16 15a4 4 0 0 1 4 4v1"/></svg></div>
       <h3>Whole family, one view</h3>
       <p>Track accounts across every family member and see combined net worth, not just your own portfolio.</p>
     </div>
     <div class="card reveal">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
+      <div class="icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
       <h3>Every asset type</h3>
       <p>Mutual funds, stocks, bonds/NCDs, NPS, PF, gold, fixed deposits, and demat accounts — domestic and international.</p>
     </div>
     <div class="card reveal">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div>
+      <div class="icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div>
       <h3>Banks, loans &amp; insurance too</h3>
       <p>Savings accounts, credit cards, loan EMIs and insurance policies tracked alongside your investments.</p>
     </div>
@@ -220,12 +236,12 @@
       <p>Everything is stored on your device. Nothing is uploaded to any server — your balances and policy numbers stay private.</p>
     </div>
     <div class="card reveal">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+      <div class="icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
       <h3>Research, one click away</h3>
       <p>Jump straight to Screener.in, Tickertape, MoneyControl, TradingView or StockEdge for deeper analysis.</p>
     </div>
     <div class="card reveal">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+      <div class="icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
       <h3>Built for the global Indian</h3>
       <p>NRE/NRO accounts tracked as proper account types, budgets in 66+ currencies, cross-border net worth in one vault — not just an India-only tracker.</p>
     </div>
@@ -243,17 +259,17 @@
       <p>Every record in the vault — holdings, balances, policy details, personal identifiers — is encrypted with the authenticated-encryption standard approved for classified government use. Tampering is detectable, not just unreadable.</p>
     </div>
     <div class="card reveal">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 0v3M7 10V7a5 5 0 0 1 10 0v3"/><rect x="5" y="10" width="14" height="10" rx="2"/></svg></div>
+      <div class="icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 0v3M7 10V7a5 5 0 0 1 10 0v3"/><rect x="5" y="10" width="14" height="10" rx="2"/></svg></div>
       <h3>Master key derivation <span class="seclbl">Argon2id</span></h3>
       <p>Your encryption key is never derived from guessable identifiers like name or ID. It comes from your own Master Password via Argon2id — the memory-hard algorithm built to resist GPU/ASIC-accelerated brute-force attacks.</p>
     </div>
     <div class="card reveal">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3 2.45c-.9.2-1.5 1-1.5 1.9v.4M12 17h.01"/></svg></div>
+      <div class="icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3 2.45c-.9.2-1.5 1-1.5 1.9v.4M12 17h.01"/></svg></div>
       <h3>Local-first, zero-knowledge</h3>
       <p>No cloud backend for portfolio storage. Every encrypted record lives solely on your own machine — nothing to subpoena, breach, mishandle, or monetize at our end, because it never exists there.</p>
     </div>
     <div class="card reveal">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.9 4.9 19.1 19.1M12 3v3M3 12h3M18 12h3M12 18v3"/><circle cx="12" cy="12" r="7"/></svg></div>
+      <div class="icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.9 4.9 19.1 19.1M12 3v3M3 12h3M18 12h3M12 18v3"/><circle cx="12" cy="12" r="7"/></svg></div>
       <h3>No tracking. No telemetry. No ads.</h3>
       <p>No analytics SDK, crash-reporting service, or tracking pixel of any kind. The only network calls are the specific, allowlisted market/currency lookups your own portfolio needs.</p>
     </div>
