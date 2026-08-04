@@ -153,9 +153,12 @@
   .contact-row{display:flex;gap:32px;flex-wrap:wrap;justify-content:center;margin-top:32px;color:var(--muted);font-size:.9rem;}
   .contact-row a{color:var(--accent2);}
 
-  .showcase-list{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:14px;max-width:640px;}
+  .showcase{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  @media(max-width:860px){.showcase{grid-template-columns:1fr;gap:40px;}.showcase .showcase-media{order:-1;}}
+  .showcase-list{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:14px;}
   .showcase-list li{display:flex;gap:10px;color:var(--muted);font-size:.95rem;}
   .showcase-list svg{width:18px;height:18px;color:var(--accent);flex-shrink:0;margin-top:2px;}
+  .showcase-media .frame{margin:0;max-width:none;}
 
   /* security two-column layout (distinct shape from the card grid) */
   .sec-2col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
@@ -198,10 +201,6 @@
       <span><svg viewBox="0 0 20 20" fill="currentColor"><path d="M6 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6Zm2 3h4a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2Z"/></svg> One-time install</span>
     </div>
   </div>
-  <div class="frame reveal">
-    <div class="frame-chrome"><span></span><span></span><span></span></div>
-    <img src="assets/screenshot-portfolio.jpg" alt="PK WealthPulse portfolio dashboard — net worth, asset allocation and holdings across mutual funds, stocks, gold and NPS">
-  </div>
 </header>
 
 <section class="alt">
@@ -228,18 +227,26 @@
     <h2 class="reveal">Everything your family's finances need, in one place</h2>
     <p class="lede reveal">Not just a portfolio tracker — banks, loans, credit cards, insurance and budget live alongside your investments.</p>
 
-    <div class="reveal">
-      <div class="kicker" style="margin-bottom:14px">Whole Family</div>
-      <h2 style="font-size:1.7rem">One vault. Every family member.</h2>
-      <p class="lede" style="margin-bottom:0">See combined net worth across every account your family holds — not just your own portfolio — with a per-member breakdown you can filter in one click.</p>
-      <ul class="showcase-list">
-        <li><svg viewBox="0 0 20 20" fill="currentColor"><path d="m4 10 4 4 8-8-1.4-1.4L8 11.2l-2.6-2.6L4 10Z"/></svg> Add a spouse, parent or child — one true financial picture, not five spreadsheets</li>
-        <li><svg viewBox="0 0 20 20" fill="currentColor"><path d="m4 10 4 4 8-8-1.4-1.4L8 11.2l-2.6-2.6L4 10Z"/></svg> Filter the whole dashboard down to any single member instantly</li>
-        <li><svg viewBox="0 0 20 20" fill="currentColor"><path d="m4 10 4 4 8-8-1.4-1.4L8 11.2l-2.6-2.6L4 10Z"/></svg> Works the same whether family is in one city or across three countries</li>
-      </ul>
+    <div class="showcase reveal">
+      <div>
+        <div class="kicker" style="margin-bottom:14px">Whole Family</div>
+        <h2 style="font-size:1.7rem">One vault. Every family member.</h2>
+        <p class="lede" style="margin-bottom:0">See combined net worth across every account your family holds — not just your own portfolio — with a per-member breakdown you can filter in one click.</p>
+        <ul class="showcase-list">
+          <li><svg viewBox="0 0 20 20" fill="currentColor"><path d="m4 10 4 4 8-8-1.4-1.4L8 11.2l-2.6-2.6L4 10Z"/></svg> Add a spouse, parent or child — one true financial picture, not five spreadsheets</li>
+          <li><svg viewBox="0 0 20 20" fill="currentColor"><path d="m4 10 4 4 8-8-1.4-1.4L8 11.2l-2.6-2.6L4 10Z"/></svg> Filter the whole dashboard down to any single member instantly</li>
+          <li><svg viewBox="0 0 20 20" fill="currentColor"><path d="m4 10 4 4 8-8-1.4-1.4L8 11.2l-2.6-2.6L4 10Z"/></svg> Works the same whether family is in one city or across three countries</li>
+        </ul>
+      </div>
+      <div class="showcase-media">
+        <div class="frame">
+          <div class="frame-chrome"><span></span><span></span><span></span></div>
+          <img src="assets/screenshot-family.jpg" alt="PK WealthPulse Family view — combined net worth and per-member breakdown across all family accounts">
+        </div>
+      </div>
     </div>
 
-    <div class="grid" style="margin-top:40px">
+    <div class="grid" style="margin-top:72px">
       <div class="card reveal">
         <div class="icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div>
         <h3>Smart statement import</h3>
