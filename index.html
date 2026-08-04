@@ -85,6 +85,14 @@
 
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
   .reveal.in{opacity:1;transform:none;}
+
+  /* license request form (embedded) */
+  .license-card{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));border:1px solid var(--border);border-radius:20px;padding:12px;max-width:720px;margin:0 auto;position:relative;overflow:hidden;}
+  .license-card::before{content:"";position:absolute;top:-160px;right:-160px;width:340px;height:340px;background:radial-gradient(circle,rgba(108,140,255,.14),transparent 70%);pointer-events:none;}
+  .license-card iframe{width:100%;height:1180px;border:none;border-radius:12px;display:block;position:relative;}
+
+  .contact-row{display:flex;gap:32px;flex-wrap:wrap;justify-content:center;margin-top:28px;color:var(--muted);font-size:.9rem;}
+  .contact-row a{color:var(--accent2);}
 </style>
 </head>
 <body>
@@ -94,9 +102,10 @@
     <div class="brand"><img src="assets/logo.png" alt=""> PK WealthPulse</div>
     <div class="navlinks">
       <a href="#features">Features</a>
+      <a href="#get-license">Get License</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="navcta" href="https://get.microsoft.com/installer/download/9NGMX7VC3BJR?referrer=appbadge">Download Free</a>
+    <a class="navcta" href="#get-license">Get License</a>
   </div>
 </nav>
 
@@ -192,6 +201,22 @@
   </details>
 </section>
 
+<section class="wrap" id="get-license">
+  <div class="kicker reveal" style="text-align:center">Get Started</div>
+  <h2 class="reveal" style="text-align:center">Request your license</h2>
+  <p class="lede reveal" style="text-align:center;margin-left:auto;margin-right:auto">Pick a plan, tell us where to send it. Verified requests get their license emailed within 24 hours on weekdays, 48 on weekends.</p>
+
+  <div class="license-card reveal">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdd6QC9-V5Cfw02hXL7Sb9X_oZ2XjEVDOAJ60FCy7_rQkjeBw/viewform?embedded=true" loading="lazy" title="PK WealthPulse License Request">Loading…</iframe>
+  </div>
+  <p class="hint" style="text-align:center;margin-top:14px">Windows is available now for instant download above. Mac and Linux builds are produced on request — mention it in the form.</p>
+
+  <div class="contact-row reveal">
+    <span>Support: <a href="mailto:pkwealthpulse@gmail.com">pkwealthpulse@gmail.com</a></span>
+    <span>Contact: Praveen Kumar K</span>
+  </div>
+</section>
+
 <footer class="wrap">
   <div class="brand"><img src="assets/logo.png" alt=""> PK WealthPulse</div>
   <div class="cta">
@@ -200,6 +225,7 @@
     </a>
   </div>
   <p>© 2026 PK WealthPulse. All rights reserved.</p>
+  <p style="margin-top:8px">Support: <a href="mailto:pkwealthpulse@gmail.com">pkwealthpulse@gmail.com</a> · <a href="mailto:pkwealthpulse@outlook.com">pkwealthpulse@outlook.com</a></p>
 </footer>
 
 <script>
