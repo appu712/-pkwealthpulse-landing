@@ -195,7 +195,7 @@
 </nav>
 
 <header class="hero wrap">
-  <span class="eyebrow">🔒 Institutional-Grade Security</span>
+  <span class="eyebrow" style="display:inline-flex;align-items:center;gap:6px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Institutional-Grade Security</span>
   <h1>Your Wealth. Your Device.<br><span class="grad">Nobody Else's.</span></h1>
   <p class="sub">The only wealth dashboard architected so that <strong>we cannot see your data even if we wanted to.</strong> Mutual funds, stocks, bonds, insurance, loans, NPS, PF and gold — imported straight from your CAMS/KFintech/MF Central CAS, broker and demat statements. No cloud, no server, no breach to worry about — ever.</p>
   <div class="cta-row">
@@ -230,7 +230,7 @@
     </div>
     <div class="callout reveal">
       <div class="callout-kicker">The Core Commitment</div>
-      <p>We cannot see, access, or recover your financial data. There is no backend that stores it, no account team that can query it, and no breach at our end that could expose it — because it is never transmitted to us in the first place. This is a structural guarantee, verifiable in how the system is built, not a promise made in a privacy policy.</p>
+      <p style="max-width:none;">We cannot see, access, or recover your financial data. There is no backend that stores it, no account team that can query it, and no breach at our end that could expose it — because it is never transmitted to us in the first place. This is a structural guarantee, verifiable in how the system is built, not a promise made in a privacy policy. At ₹1,499/year for the whole household, not per user, that works out to roughly ₹250 per person per year for a family of six sharing one vault.</p>
     </div>
   </div>
 </section>
@@ -264,17 +264,17 @@
       <div class="card reveal">
         <div class="icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div>
         <h3>Smart statement import</h3>
-        <p>Upload your CAMS, KFintech or MF Central CAS, broker contract notes, or demat holding statement — parsed automatically, no manual data entry.</p>
+        <p>Upload your CAMS, KFintech or MF Central CAS, broker contract notes, or demat holding statement — parsed automatically, no manual data entry. A single PDF covering multiple bank, FD or loan accounts is auto-split and correctly attributed; NPS CRA statements parse down to the Scheme E/C/G/A level.</p>
       </div>
       <div class="card reveal">
         <div class="icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
         <h3>Every asset type</h3>
-        <p>Mutual funds, stocks, bonds/NCDs, NPS, PF, gold, fixed deposits, and demat accounts — domestic and international.</p>
+        <p>Mutual funds, stocks, bonds/NCDs, NPS, PF, gold, fixed deposits, and demat accounts — domestic and international. Physical gold is valued live by IBJA purity/carat rate; bonds with no live price use accrual/YTM math; foreign holdings auto-resolve ISIN to ticker via OpenFIGI with a Yahoo Finance fallback.</p>
       </div>
       <div class="card reveal">
         <div class="icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div>
         <h3>Banks, loans &amp; insurance too</h3>
-        <p>Savings accounts, credit cards, loan EMIs and insurance policies tracked alongside your investments.</p>
+        <p>Savings accounts, credit cards, loan EMIs and insurance policies tracked alongside your investments. Insurance carries a 0–100 protection score, a 12-month renewal calendar, and family members auto-extracted straight from the policy PDF — including OCR for scanned documents.</p>
       </div>
       <div class="card reveal">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4Z"/></svg></div>
@@ -290,6 +290,16 @@
         <div class="icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
         <h3>Built for the global Indian</h3>
         <p>NRE/NRO accounts tracked as proper account types, budgets in 66+ currencies, cross-border net worth in one vault — not just an India-only tracker.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9Z"/></svg></div>
+        <h3>OFX interchange export</h3>
+        <p>Export your whole portfolio to OFX — the Quicken, GnuCash and MS Money interchange standard. No other India-market wealth app offers this.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v6m0 12v-3M4.2 4.2l4.2 4.2m7.2 7.2 4.2 4.2M2 12h6m8 0h6M4.2 19.8l4.2-4.2m7.2-7.2 4.2-4.2"/></svg></div>
+        <h3>Alerts, your way</h3>
+        <p>Insurance, FD/bond maturity and EMI reminders with editable lead-time thresholds — delivered by email, SMS, WhatsApp or native browser notification.</p>
       </div>
     </div>
   </div>
@@ -351,6 +361,7 @@
         <tr><td>Retirement accounts (EPF/NPS/PPF)</td><td class="good">Native, with compounding calculator</td><td class="bad">Often unsupported</td><td class="neutral">Manual tracking only</td></tr>
         <tr><td>Multi-member family view</td><td class="good">One vault, every member</td><td class="neutral">Usually single-account</td><td class="bad">Separate files per member</td></tr>
         <tr><td>NRI &amp; cross-border finances</td><td class="good">Native NRE/NRO, 66+ currencies</td><td class="bad">Almost always India-only</td><td class="neutral">Possible, but unstructured</td></tr>
+        <tr><td>International interchange export (OFX)</td><td class="good">Native — Quicken, GnuCash, MS Money</td><td class="bad">Not offered by any India-market app</td><td class="bad">Not possible</td></tr>
       </table>
     </div>
 
@@ -403,6 +414,14 @@
 
     <div class="license-card reveal">
       <form id="licenseForm">
+        <!-- Honeypot: real users never see or fill this (off-screen, not display:none
+             since some bots specifically skip display:none fields); a script filling
+             every input on the page fills it too. Anything non-empty here means the
+             submission is silently dropped client-side -- see the submit handler. -->
+        <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+          <label for="f-hp">Leave this field empty</label>
+          <input type="text" id="f-hp" name="f-hp" tabindex="-1" autocomplete="off">
+        </div>
         <div class="field">
           <label>License Type</label>
           <div class="pillgroup">
@@ -485,8 +504,18 @@
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
   var LICENSE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSdd6QC9-V5Cfw02hXL7Sb9X_oZ2XjEVDOAJ60FCy7_rQkjeBw/formResponse';
+  // Anti-spam: page-load timestamp for a minimum-fill-time check, same idea
+  // as the desktop app's own 800ms anti-bot guard on signup/login. A script
+  // that fills every field and POSTs immediately (skipping the honeypot
+  // above too, if it's smart enough to avoid off-screen fields) still can't
+  // fill a real multi-field form and submit inside ~1.5s the way a human
+  // filling name/email/mobile/DOB/security-question realistically can.
+  var formLoadedAt = Date.now();
   document.getElementById('licenseForm').addEventListener('submit', function(e){
     e.preventDefault();
+    if (document.getElementById('f-hp').value || (Date.now() - formLoadedAt) < 1500) {
+      return; // silently drop -- no error shown, nothing to signal a bot script
+    }
     var btn = document.getElementById('submitBtn');
     btn.disabled = true; btn.textContent = 'Sending…';
 

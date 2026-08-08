@@ -1,0 +1,8 @@
+# Cloudflare Wrangler's local cache -- contains the account ID and, if you
+# ever run `wrangler login` locally, an OAuth token. Never needs to be
+# committed; only .wrangler/state matters and that's regenerated on demand.
+.wrangler/
+
+node_modules/
+.env
+.env.*
