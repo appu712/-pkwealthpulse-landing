@@ -126,6 +126,7 @@
   .footer-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
   .foot-copy{margin:0;}
   @media(max-width:700px){.footer-row{justify-content:center;text-align:center;}}
+  @media(max-width:700px){.foot-legal{white-space:normal !important;}}
   footer p{margin:6px 0;}
 
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
@@ -501,8 +502,8 @@
       <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get PK WealthPulse from the Microsoft Store" style="height:44px;">
     </a>
   </div>
-  <div class="wrap">
-    <p style="margin:14px 0 0;font-size:.78rem;color:var(--muted);max-width:900px;">PK WealthPulse is not a SEBI-registered Investment Adviser or Research Analyst. Portfolio Insights is informational only — a read of fundamentals on holdings you already own, sourced from independent public data providers — and is not investment advice or a recommendation to buy, sell, or hold any security.</p>
+  <div style="padding:14px 32px 0;text-align:center;">
+    <p class="foot-legal" style="margin:0;font-size:.72rem;color:var(--muted);white-space:nowrap;">PK WealthPulse is not a SEBI-registered Investment Adviser or Research Analyst — Portfolio Insights is informational only, not investment advice.</p>
   </div>
 </footer>
 
