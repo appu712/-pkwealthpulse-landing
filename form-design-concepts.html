@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PK WealthPulse — License Form Concepts</title>
+<style>
+  :root{
+    --bg:#08090b; --bg2:#0d0f12; --panel:#121417; --panel2:#16191d; --border:rgba(255,255,255,.08); --border-strong:rgba(255,255,255,.16);
+    --text:#F3F5F7; --muted:#C1C9D1; --accent:#D4AF5A; --accent2:#A6813C; --ink:#171204;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg2);color:var(--text);font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .page-hdr{text-align:center;padding:40px 24px 8px;}
+  .page-hdr h1{font-size:1.6rem;margin:0 0 8px;}
+  .page-hdr p{color:var(--muted);font-size:.92rem;margin:0;}
+  .concept{max-width:900px;margin:48px auto;padding:0 24px;}
+  .concept-label{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;}
+  .concept-label b{font-size:1.15rem;}
+  .concept-label span{font-size:.82rem;color:var(--muted);}
+  .concept-note{font-size:.85rem;color:var(--muted);margin:0 0 20px;max-width:640px;}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:32px;}
+
+  label{display:block;font-size:.82rem;font-weight:600;color:var(--muted);margin-bottom:8px;}
+  input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--text);font-size:.92rem;font-family:inherit;}
+  input::placeholder{color:#5b6472;}
+  input:focus{outline:none;border-color:var(--accent);}
+  .field{margin-bottom:18px;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .hint{font-size:.76rem;color:var(--muted);margin:6px 0 0;}
+  .btn{width:100%;padding:14px;border:none;border-radius:10px;background:var(--accent);color:var(--ink);font-weight:700;font-size:.95rem;cursor:pointer;font-family:inherit;}
+
+  .pillgroup{display:flex;gap:10px;flex-wrap:wrap;}
+  .pillgroup input{position:absolute;opacity:0;pointer-events:none;width:0;}
+  .pillgroup label{flex:1;min-width:110px;text-align:center;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.025);font-size:.85rem;font-weight:600;color:var(--muted);cursor:pointer;margin:0;}
+  .pillgroup label small{display:block;font-size:.72rem;opacity:.75;}
+  .pillgroup input:checked+label{border-color:var(--accent);color:var(--ink);background:var(--accent);}
+
+  /* ---- Concept A: Guided steps + progress bar ---- */
+  .a-progress{display:flex;align-items:center;gap:6px;margin-bottom:28px;}
+  .a-progress .seg{flex:1;height:4px;border-radius:2px;background:var(--border);}
+  .a-progress .seg.done{background:var(--accent);}
+  .a-step-hdr{display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+  .a-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--ink);font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .a-title{font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;}
+  .a-step{padding-top:22px;border-top:1px solid var(--border);}
+  .a-step:first-child{padding-top:0;border-top:none;}
+  .a-recommended{position:relative;border-color:rgba(212,175,90,.5) !important;}
+  .a-tag{display:block;font-size:.6rem;font-weight:700;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+  .pillgroup input:checked+.a-recommended .a-tag{color:var(--ink);opacity:.75;}
+
+  /* ---- Concept B: Compact single card, segmented plan control ---- */
+  .b-plan-seg{display:flex;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:24px;}
+  .b-plan-seg input{position:absolute;opacity:0;width:0;pointer-events:none;}
+  .b-plan-seg label{flex:1;text-align:center;padding:14px 10px;cursor:pointer;color:var(--muted);border-right:1px solid var(--border);}
+  .b-plan-seg label:last-child{border-right:none;}
+  .b-plan-seg label b{display:block;font-size:.9rem;}
+  .b-plan-seg label small{display:block;font-size:.72rem;opacity:.8;margin-top:2px;}
+  .b-plan-seg input:checked+label{background:var(--accent);color:var(--ink);}
+  .b-price-line{text-align:center;font-size:.82rem;color:var(--muted);margin:-14px 0 24px;}
+  .b-compact-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .b-inline-note{font-size:.78rem;color:var(--muted);margin:0 0 20px;padding:10px 14px;background:rgba(255,255,255,.03);border-radius:8px;border-left:2px solid var(--accent);}
+
+  /* ---- Concept C: Split layout, persistent trust rail ---- */
+  .c-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;overflow:hidden;border-radius:16px;border:1px solid var(--border);}
+  .c-left{background:linear-gradient(160deg,rgba(212,175,90,.1),transparent);padding:32px;border-right:1px solid var(--border);}
+  .c-left h3{font-size:1.05rem;margin:0 0 14px;}
+  .c-left ul{list-style:none;margin:0 0 24px;padding:0;font-size:.85rem;color:var(--muted);display:flex;flex-direction:column;gap:10px;}
+  .c-left li{display:flex;gap:8px;align-items:flex-start;}
+  .c-left li::before{content:"✓";color:var(--accent);font-weight:700;flex-shrink:0;}
+  .c-price-box{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;}
+  .c-price-box b{font-size:1.4rem;color:var(--accent);}
+  .c-price-box div{font-size:.78rem;color:var(--muted);margin-top:2px;}
+  .c-right{padding:32px;}
+  @media(max-width:720px){.c-grid{grid-template-columns:1fr;}.c-left{border-right:none;border-bottom:1px solid var(--border);}}
+</style>
+</head>
+<body>
+
+<div class="page-hdr">
+  <h1>License Form — 3 Design Concepts</h1>
+  <p>Same fields, same submit logic. Purely a layout/hierarchy comparison — pick one, mix pieces, or keep current.</p>
+</div>
+
+<!-- CONCEPT A -->
+<div class="concept">
+  <div class="concept-label"><b>Concept A</b><span>Guided steps + progress bar</span></div>
+  <p class="concept-note">Closest to what's live now, with an added progress bar so the form visibly shortens as you go — good for reducing "how much is left" anxiety on a 7-field form.</p>
+  <div class="card">
+    <div class="a-progress"><div class="seg done"></div><div class="seg"></div><div class="seg"></div></div>
+
+    <div class="a-step">
+      <div class="a-step-hdr"><span class="a-num">1</span><span class="a-title">Choose your plan</span></div>
+      <div class="field">
+        <div class="pillgroup">
+          <input type="radio" name="a-plan" id="a-trial" checked><label for="a-trial">Trial · 14 Days<br><small>Free</small></label>
+          <input type="radio" name="a-plan" id="a-pro"><label for="a-pro" class="a-recommended"><span class="a-tag">Most pick this</span>Pro · 365 Days<br><small>₹1,999/yr</small></label>
+          <input type="radio" name="a-plan" id="a-max"><label for="a-max">Max · 2 Years<br><small>₹2,999</small></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="a-step">
+      <div class="a-step-hdr"><span class="a-num">2</span><span class="a-title">Your details</span></div>
+      <div class="field">
+        <div class="pillgroup">
+          <input type="radio" name="a-plat" id="a-win" checked><label for="a-win">Windows — available now</label>
+          <input type="radio" name="a-plat" id="a-mac"><label for="a-mac">macOS (on request)</label>
+          <input type="radio" name="a-plat" id="a-lin"><label for="a-lin">Linux (on request)</label>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Full Name</label><input placeholder="Your name"></div>
+        <div class="field"><label>Email Address</label><input placeholder="you@example.com"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Mobile Number</label><input placeholder="+91 98765 43210"></div>
+        <div class="field"><label>Date of Birth</label><input type="date"></div>
+      </div>
+    </div>
+
+    <div class="a-step">
+      <div class="a-step-hdr"><span class="a-num">3</span><span class="a-title">Verify &amp; submit</span></div>
+      <div class="field"><label>License Verification Phrase</label><input placeholder="A phrase only you would know"></div>
+      <button class="btn">Request License</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONCEPT B -->
+<div class="concept">
+  <div class="concept-label"><b>Concept B</b><span>Compact single card, no step chrome</span></div>
+  <p class="concept-note">One flat card, no numbered steps — plan choice becomes a top segmented control (like a pricing toggle), platform collapses into one inline note. Shortest scroll distance of the three.</p>
+  <div class="card">
+    <div class="b-plan-seg">
+      <input type="radio" name="b-plan" id="b-trial" checked><label for="b-trial"><b>Trial</b><small>14 days · Free</small></label>
+      <input type="radio" name="b-plan" id="b-pro"><label for="b-pro"><b>Pro</b><small>365 days · ₹1,999/yr</small></label>
+      <input type="radio" name="b-plan" id="b-max"><label for="b-max"><b>Max</b><small>2 years · ₹2,999</small></label>
+    </div>
+    <p class="b-price-line">One household, one vault — not per user.</p>
+
+    <div class="b-inline-note">Windows build available now. Need macOS or Linux? Mention it in your request — we'll follow up.</div>
+
+    <div class="b-compact-row">
+      <div class="field"><label>Full Name</label><input placeholder="Your name"></div>
+      <div class="field"><label>Email Address</label><input placeholder="you@example.com"></div>
+      <div class="field"><label>Mobile Number</label><input placeholder="+91 98765 43210"></div>
+      <div class="field"><label>Date of Birth</label><input type="date"></div>
+    </div>
+    <div class="field">
+      <label>License Verification Phrase</label>
+      <input placeholder="A phrase only you would know">
+      <p class="hint">Used only to verify ownership when requesting license support.</p>
+    </div>
+    <button class="btn">Request License</button>
+  </div>
+</div>
+
+<!-- CONCEPT C -->
+<div class="concept">
+  <div class="concept-label"><b>Concept C</b><span>Split layout, persistent trust rail</span></div>
+  <p class="concept-note">A left-hand panel keeps price + trust points visible the entire time you're filling the right-hand fields — useful if you want the ₹1,999 value case still in view while someone is midway through typing.</p>
+  <div class="c-grid">
+    <div class="c-left">
+      <h3>What you're getting</h3>
+      <ul>
+        <li>One household, one vault — not per user, not per account.</li>
+        <li>Your portfolio data never leaves your device.</li>
+        <li>Verified requests processed within 24–48 hours.</li>
+      </ul>
+      <div class="c-price-box">
+        <b>₹1,999<span style="font-size:.85rem;color:var(--muted)">/year</span></b>
+        <div>For the entire household · Pro plan</div>
+      </div>
+    </div>
+    <div class="c-right">
+      <div class="field">
+        <div class="pillgroup">
+          <input type="radio" name="c-plan" id="c-trial" checked><label for="c-trial">Trial<br><small>Free</small></label>
+          <input type="radio" name="c-plan" id="c-pro"><label for="c-pro">Pro<br><small>₹1,999/yr</small></label>
+          <input type="radio" name="c-plan" id="c-max"><label for="c-max">Max<br><small>₹2,999</small></label>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Full Name</label><input placeholder="Your name"></div>
+        <div class="field"><label>Email Address</label><input placeholder="you@example.com"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Mobile Number</label><input placeholder="+91 98765 43210"></div>
+        <div class="field"><label>Date of Birth</label><input type="date"></div>
+      </div>
+      <div class="field"><label>License Verification Phrase</label><input placeholder="A phrase only you would know"></div>
+      <button class="btn">Request License</button>
+    </div>
+  </div>
+</div>
+
+<div style="height:60px"></div>
+</body>
+</html>
