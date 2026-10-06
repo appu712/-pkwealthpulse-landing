@@ -7,7 +7,7 @@
 <meta name="description" content="Your family's complete financial picture — privately stored on your device. Mutual funds, stocks, bonds, bank accounts, insurance, EPF, NPS, PPF, SSY, gold, property, business ownership and loans, consolidated into one net worth without uploading your portfolio to someone else's cloud.">
 <meta property="og:title" content="PK WealthPulse — Your Family's Wealth. One Private Vault.">
 <meta property="og:description" content="Mutual funds, stocks, bonds, bank accounts, insurance, EPF, NPS, PPF, SSY, gold, property, business ownership and loans — consolidated into one financial picture, privately stored on your device. ₹1,999/year for the entire household.">
-<meta property="og:image" content="assets/screenshot-portfolio-v2.jpg">
+<meta property="og:image" content="assets/screenshot-portfolio-v3.jpg">
 <meta name="theme-color" content="#0A0A0A">
 <link rel="icon" href="assets/logo.png">
 <meta name="google-site-verification" content="PtIQGflrQ2eholAdQLUPJY7o91xxKASJNg6zFswvtJA" />
@@ -64,7 +64,7 @@
   .btn-primary{display:inline-block;background:var(--accent);color:var(--ink);font-weight:700;font-size:1.02rem;padding:16px 36px;border-radius:12px;box-shadow:0 1px 0 rgba(255,255,255,.2) inset,0 12px 30px -8px rgba(212,175,90,.4);transition:transform .15s,box-shadow .15s,background .15s;}
   .btn-primary:hover{transform:translateY(-2px);background:#E8C878;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 16px 36px -8px rgba(212,175,90,.5);}
   .or-divider{color:var(--muted);font-size:.8rem;}
-  .trust{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start;color:var(--text);font-size:.8rem;margin-top:8px;}
+  .trust{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start;color:var(--text);font-size:.8rem;margin-top:22px;}
   @media(max-width:960px){.trust{justify-content:center;}}
   .trust span{display:flex;align-items:center;gap:6px;}
   .trust svg{width:14px;height:14px;color:var(--accent);flex-shrink:0;}
@@ -256,6 +256,40 @@
   .sec-item .icon{margin-bottom:0;flex-shrink:0;}
   .sec-item h3{margin:0 0 5px;font-size:1rem;font-weight:600;}
   .sec-item p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.6;}
+
+  /* narrative sections (problem > story > fit > uses > household > privacy > special users > flow > who > final) */
+  .big-h{font-size:clamp(1.7rem,3.2vw,2.5rem);line-height:1.15;letter-spacing:-.02em;font-weight:700;margin:0 0 22px;}
+  .big-h .grad{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .scatter{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px;}
+  .scatter span{padding:9px 16px;border:1px dashed var(--border-strong);border-radius:100px;color:var(--muted);font-size:.92rem;}
+  .prose{max-width:720px;color:var(--muted);font-size:1.08rem;line-height:1.75;}
+  .prose p{margin:0 0 16px;}.prose strong{color:var(--text);}
+  .pull{font-size:1.25rem;font-weight:650;color:var(--text);margin-top:24px;}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  @media(max-width:860px){.two{grid-template-columns:1fr;gap:28px;}}
+  .three-lines{display:flex;flex-direction:column;gap:6px;margin:22px 0 0;font-size:1.3rem;font-weight:700;letter-spacing:-.01em;}
+  .three-lines span:last-child{color:var(--accent);}
+  .fit{width:100%;border-collapse:collapse;margin:8px 0 24px;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--panel);}
+  .fit th,.fit td{padding:15px 22px;text-align:left;border-bottom:1px solid var(--border);}
+  .fit th{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;background:rgba(255,255,255,.02);}
+  .fit td:first-child{font-weight:600;}.fit td:last-child{color:var(--muted);}
+  .fit tr:last-child td{border-bottom:0;}
+  .fit tr.us td{background:rgba(212,175,90,.08);color:var(--accent);font-weight:700;border-top:1px solid rgba(212,175,90,.35);}
+  .num{font-size:.78rem;font-weight:700;letter-spacing:.14em;color:var(--accent);margin-bottom:12px;}
+  .price-big{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:26px 0 6px;}
+  .price-big b{font-size:clamp(2.6rem,6vw,4rem);line-height:1;font-weight:700;letter-spacing:-.03em;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .price-big span{color:var(--text);font-size:1.15rem;font-weight:600;}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media(max-width:860px){.steps{grid-template-columns:repeat(2,1fr);}}@media(max-width:560px){.steps{grid-template-columns:1fr;}}
+  .steps .card{position:relative;}.steps .card:not(:last-child):after{content:"\2192";position:absolute;right:-16px;top:50%;transform:translateY(-50%);color:var(--accent);font-size:1.2rem;z-index:2;}
+  @media(max-width:860px){.steps .card:after{display:none!important;}}
+  .who q{display:block;color:var(--text);font-style:italic;margin-top:10px;font-size:.95rem;quotes:none;}
+  .final-sec{text-align:center;padding:80px 0 70px;background:radial-gradient(800px 380px at 50% 0,rgba(212,175,90,.12),transparent 70%),var(--bg);}
+  .final-sec h2{font-size:clamp(1.8rem,4vw,3rem);line-height:1.12;margin-bottom:26px;font-weight:700;}
+  .final-sec .chain{display:flex;flex-direction:column;gap:4px;color:var(--muted);font-size:1.15rem;margin:0 0 26px;}
+  .final-sec .chain b{color:var(--text);font-size:1.4rem;margin-top:8px;}
+  .final-sec .tag{font-size:1.1rem;color:var(--muted);margin:0 0 32px;line-height:1.7;}
+  .final-sec .tag strong{color:var(--accent);}
 </style>
 </head>
 <body>
@@ -295,7 +329,7 @@
     </div>
     <div class="hero-media">
       <div class="frame">
-        <img src="assets/screenshot-portfolio-v2.jpg" alt="PK WealthPulse Portfolio view — consolidated net worth across mutual funds, stocks, bonds, insurance and more">
+        <img src="assets/screenshot-portfolio-v3.jpg" alt="PK WealthPulse Portfolio view — consolidated net worth across mutual funds, stocks, bonds, insurance and more">
       </div>
       <div class="trust">
         <span><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a1 1 0 0 1 1 1v1.06a7 7 0 0 1 5.94 5.94H18a1 1 0 1 1 0 2h-1.06A7 7 0 0 1 11 17.94V19a1 1 0 1 1-2 0v-1.06A7 7 0 0 1 3.06 12H2a1 1 0 1 1 0-2h1.06A7 7 0 0 1 9 4.06V3a1 1 0 0 1 1-1Zm0 4a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg> No PK WealthPulse account required</span>
@@ -312,6 +346,71 @@
     </div>
   </div>
 </header>
+
+<section id="problem">
+  <div class="wrap">
+    <div class="kicker reveal">The Problem</div>
+    <h2 class="big-h reveal">Your financial life is <span class="grad">bigger than your portfolio.</span></h2>
+    <div class="scatter reveal"><span>Stocks in one place</span><span>Mutual funds in another</span><span>Bank accounts somewhere else</span><span>Insurance elsewhere</span><span>EPF, NPS &amp; PPF elsewhere</span><span>Property</span><span>Gold</span><span>Business interests</span><span>Loans</span></div>
+    <div class="prose reveal"><p>You may have all the information &mdash; but still not have <strong>one clear financial picture.</strong></p>
+    <p class="pull">PK WealthPulse brings the pieces together.</p></div>
+  </div>
+</section>
+
+<section class="alt" id="why-built">
+  <div class="wrap two">
+    <div class="reveal">
+      <div class="kicker">Why We Built It</div>
+      <h2 class="big-h">Built from a <span class="grad">real financial problem.</span></h2>
+      <div class="prose"><p>We realized something while trying to piece together a family's financial picture: <strong>having investments is not the same as having financial clarity.</strong></p>
+      <p>Financial information can be scattered across accounts, platforms, statements and documents &mdash; and often one person ends up being the only one who knows where everything is.</p>
+      <p>PK WealthPulse was built to help solve that gap.</p></div>
+    </div>
+    <div class="reveal"><div class="callout" style="margin-top:0"><div class="callout-kicker">The idea in three lines</div>
+      <div class="three-lines"><span>See your financial life.</span><span style="color:var(--text)">Understand it.</span><span>Keep your family informed.</span></div>
+      <p style="margin-top:18px;font-size:.9rem;color:var(--muted)"><a href="#founder" style="color:var(--accent)">Read the developer's note &darr;</a></p></div></div>
+  </div>
+</section>
+
+<section id="where-it-fits">
+  <div class="wrap">
+    <div class="kicker reveal">Where PK WealthPulse Fits</div>
+    <h2 class="big-h reveal">Your bank isn't <span class="grad">your financial picture.</span></h2>
+    <table class="fit reveal"><thead><tr><th>What you use</th><th>What it shows</th></tr></thead><tbody>
+      <tr><td>Bank app</td><td>Bank accounts</td></tr><tr><td>Broker</td><td>Stocks</td></tr><tr><td>Mutual fund platform</td><td>Mutual funds</td></tr><tr><td>Insurance portal</td><td>Insurance</td></tr><tr><td>EPF / NPS / PPF</td><td>Retirement assets</td></tr><tr><td>Spreadsheet</td><td>Whatever you manually enter</td></tr><tr class="us"><td>PK WealthPulse</td><td>Your broader financial picture</td></tr></tbody></table>
+    <div class="prose reveal"><p><strong>PK WealthPulse doesn't replace your financial accounts.</strong></p><p>It helps you see them as part of one bigger picture.</p></div>
+  </div>
+</section>
+
+<section class="alt" id="what-can-i-do">
+  <div class="wrap">
+    <div class="kicker reveal">What Can I Do With It?</div>
+    <h2 class="big-h reveal">Six things you'll <span class="grad">actually use it for.</span></h2>
+    <div class="grid reveal">
+      <div class="card"><div class="num">01</div><h3>See your wealth</h3><p>Bring investments and assets together.</p></div>
+      <div class="card"><div class="num">02</div><h3>Understand your net worth</h3><p>See assets and liabilities together.</p></div>
+      <div class="card"><div class="num">03</div><h3>Organize your family finances</h3><p>Maintain a broader household financial picture.</p></div>
+      <div class="card"><div class="num">04</div><h3>Plan retirement</h3><p>Bring retirement assets and assumptions into your planning picture.</p></div>
+      <div class="card"><div class="num">05</div><h3>Review your investments</h3><p>Use the available portfolio and fundamental insights to understand holdings.</p></div>
+      <div class="card"><div class="num">06</div><h3>Prepare for the future</h3><p>Keep important financial information organized and visible.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="household">
+  <div class="wrap two" style="grid-template-columns:.85fr 1.15fr">
+    <div class="reveal">
+      <div class="kicker">Built For The Whole Household</div>
+      <h2 class="big-h">One household. <span class="grad">One financial picture.</span></h2>
+      <div class="prose"><p>Your finances don't exist in isolation. Your spouse may have investments. You may have retirement accounts. The family may own property. There may be loans, insurance and other assets.</p>
+      <p>PK WealthPulse lets you organize the household's broader financial picture together.</p></div>
+      <div class="price-big"><b>&#8377;1,999/year</b><span>for the entire household</span></div>
+      <p style="margin:0 0 22px;color:var(--muted);font-size:.9rem">Not per user. Every member, every holding.</p>
+      <a class="btn-primary" href="#get-license">Start Your Free Trial &rarr;</a>
+    </div>
+    <div class="reveal"><div class="frame" style="margin:0"><img src="assets/screenshot-family-v2.jpg" alt="PK WealthPulse Family view showing every household member's holdings in one picture"></div></div>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
@@ -392,7 +491,7 @@
       </div>
       <div class="showcase-media">
         <div class="frame">
-          <img src="assets/screenshot-family.jpg" alt="PK WealthPulse Family view — combined net worth and per-member breakdown across all family accounts">
+          <img src="assets/screenshot-family-v3.jpg" alt="PK WealthPulse Family view — combined net worth and per-member breakdown across all family accounts">
         </div>
       </div>
     </div>
@@ -407,7 +506,7 @@
         </div>
         <div class="banner-media">
           <div class="frame">
-            <img src="assets/screenshot-import.jpg" alt="PK WealthPulse Import screen — CAS, broker, bonds, NPS, PF and tax statement upload, all sources in one place">
+            <img src="assets/screenshot-import-v2.jpg" alt="PK WealthPulse Import screen — CAS, broker, bonds, NPS, PF and tax statement upload, all sources in one place">
           </div>
         </div>
       </div>
@@ -513,6 +612,20 @@
   </div>
 </section>
 
+<section class="alt" id="privacy-story">
+  <div class="wrap">
+    <div class="kicker reveal">Privacy</div>
+    <h2 class="big-h reveal">Your financial data <span class="grad">belongs with you.</span></h2>
+    <div class="stats reveal" style="margin-bottom:26px">
+      <div class="card"><h3>No account needed</h3><p>No PK WealthPulse account required.</p></div>
+      <div class="card"><h3>On your device</h3><p>Your portfolio data stays on your device.</p></div>
+      <div class="card"><h3>AES-256-GCM</h3><p>Encrypted vault.</p></div>
+      <div class="card"><h3>Argon2id</h3><p>Key derivation.</p></div>
+    </div>
+    <div class="prose reveal"><p>We designed PK WealthPulse around a simple principle:</p><p class="pull" style="margin-top:0">Your financial information shouldn't need to live in our database for you to use the application.</p></div>
+  </div>
+</section>
+
 <section id="security">
   <div class="wrap">
     <div class="kicker reveal">Security Architecture</div>
@@ -603,6 +716,46 @@
     <div class="callout reveal">
       <p style="max-width:none;margin:0 0 12px">WealthPulse is a local application. Your vault isn't hosted on our servers, and your financial data isn't dependent on our cloud continuing to operate.</p>
       <p style="max-width:none;margin:0">Export your data. Back it up. Move it to another installation. <strong style="color:var(--text)">Your wealth remains yours.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section id="special">
+  <div class="wrap">
+    <div class="kicker reveal">Beyond The Basics</div>
+    <h2 class="big-h reveal">Three things most trackers <span class="grad">don't do.</span></h2>
+    <div class="grid reveal">
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3>Living across countries? Keep your financial picture together.</h3><p>Native NRE/NRO accounts, budgets in 66+ currencies and cross-border net worth in one place.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div><h3>Your data shouldn't be trapped.</h3><p>Export your holdings as OFX for Quicken, GnuCash and other tools. Your data stays portable.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><h3>Don't just know what you own. Understand what you're holding.</h3><p>Fundamentals and quality insights on your stocks and funds, shown as facts with their data sources.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="how-it-fits">
+  <div class="wrap">
+    <div class="kicker reveal">How It Fits Into Your Life</div>
+    <h2 class="big-h reveal">A simple <span class="grad">four-step rhythm.</span></h2>
+    <div class="steps reveal">
+      <div class="card"><div class="num">1 &middot; COLLECT</div><p>Bring your financial information into PK WealthPulse.</p></div>
+      <div class="card"><div class="num">2 &middot; ORGANIZE</div><p>Categorize assets, liabilities, investments, protection and other financial information.</p></div>
+      <div class="card"><div class="num">3 &middot; UNDERSTAND</div><p>See your broader financial position.</p></div>
+      <div class="card"><div class="num">4 &middot; REVIEW</div><p>Return periodically to understand how your financial picture changes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="who-for">
+  <div class="wrap">
+    <div class="kicker reveal">Who Is It For?</div>
+    <h2 class="big-h reveal">Find <span class="grad">yourself</span> here.</h2>
+    <div class="grid who reveal">
+      <div class="card"><h3>The salaried professional</h3><q>&ldquo;I earn well but don't know where everything goes.&rdquo;</q></div>
+      <div class="card"><h3>The investor</h3><q>&ldquo;I have investments across multiple platforms.&rdquo;</q></div>
+      <div class="card"><h3>The family</h3><q>&ldquo;We need a clearer picture of our household finances.&rdquo;</q></div>
+      <div class="card"><h3>The parent</h3><q>&ldquo;I want my financial information organized for my family.&rdquo;</q></div>
+      <div class="card"><h3>The NRI</h3><q>&ldquo;My financial life spans India and other countries.&rdquo;</q></div>
+      <div class="card"><h3>The financially organized</h3><q>&ldquo;I already track everything, but I want one consolidated view.&rdquo;</q></div>
     </div>
   </div>
 </section>
@@ -714,6 +867,16 @@
         <p class="lede" style="margin-bottom:0">Excel records what happened once. WealthPulse consolidates it, calculates it, and keeps watching it — renewals, maturities, new transactions, allocation drift, debt reduction, net-worth change — so the ₹1,999 buys a year of continuous attention, not a one-time import.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="final-sec" id="final">
+  <div class="wrap">
+    <h2 class="reveal">Your family's wealth deserves <span style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent">a bigger picture.</span></h2>
+    <div class="chain reveal"><span>You worked for it.</span><span>You saved it.</span><span>You invested it.</span><span>You protected it.</span><b>Now understand it.</b></div>
+    <p class="tag reveal"><strong>PK WealthPulse</strong><br>Your family's wealth. One private vault.<br>Know your money. Keep your family informed.</p>
+    <a class="btn-primary reveal" href="#get-license">Start Your Free Trial &rarr;</a>
+    <p style="margin:16px 0 0;font-size:.85rem;color:var(--muted)">14 days &middot; full access &middot; no card needed</p>
   </div>
 </section>
 
