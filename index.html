@@ -902,16 +902,7 @@
           <p class="submit-trust" style="text-align:left;margin:14px 0 0">No payment is collected here. Trial is free; Pro/Max payment is confirmed by email only after your request is verified.</p>
         </div>
         <div class="lic-right">
-          <form id="licenseForm">
-            <!-- Honeypot: real users never see or fill this (off-screen, not display:none
-                 since some bots specifically skip display:none fields); a script filling
-                 every input on the page fills it too. Anything non-empty here means the
-                 submission is silently dropped client-side -- see the submit handler. -->
-            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
-              <label for="f-hp">Leave this field empty</label>
-              <input type="text" id="f-hp" name="f-hp" tabindex="-1" autocomplete="off">
-            </div>
-
+          <div id="licenseRequest">
             <div class="field">
               <div class="pillgroup">
                 <input type="radio" name="plan" id="plan-trial" value="Trial  (14 Days)" checked><label for="plan-trial">Trial · 14 Days<br><small>Free</small></label>
@@ -920,49 +911,10 @@
               </div>
             </div>
 
-            <div class="field">
-              <div class="pillgroup pillgroup-compact">
-                <input type="radio" name="platform" id="plat-win" value="Windows" checked><label for="plat-win">Windows — available now</label>
-                <input type="radio" name="platform" id="plat-mac" value="Mac"><label for="plat-mac">macOS (on request)</label>
-                <input type="radio" name="platform" id="plat-linux" value="Linux"><label for="plat-linux">Linux (on request)</label>
-              </div>
-            </div>
+            <p style="margin:0 0 16px;font-size:.82rem;color:var(--muted)">Submit the request form with your license and setup details. Our team will review your request and send the next steps by email.</p>
 
-            <div class="row3">
-              <div class="field">
-                <label>Full Name</label>
-                <input type="text" id="f-name" placeholder="Your name" required>
-              </div>
-              <div class="field">
-                <label>Email Address</label>
-                <input type="email" id="f-email" placeholder="you@example.com" required>
-              </div>
-              <div class="field">
-                <label>Mobile Number</label>
-                <input type="tel" id="f-mobile" placeholder="+91 98765 43210" required>
-              </div>
-            </div>
-
-            <div class="row2">
-              <div class="field">
-                <label>Date of Birth</label>
-                <input type="date" id="f-dob" required>
-                <p class="hint">Used for identity verification if you ever need license support.</p>
-              </div>
-              <div class="field">
-                <label>License Verification Phrase</label>
-                <input type="text" id="f-security" placeholder="A phrase only you would know" required>
-                <p class="hint">Not your bank's security question — never shared or used for anything else.</p>
-              </div>
-            </div>
-
-            <button class="submit-btn" type="submit" id="submitBtn" style="margin-top:6px">Request License</button>
-          </form>
-
-          <div class="success-state" id="successState">
-            <div class="tick"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 10 3.5 3.5L15 7"/></svg></div>
-            <h3>Request received</h3>
-            <p>Your FINUFF license request has been received. We're verifying your details — once approved, your license lands straight in your inbox. Expect a response within 24 hours on weekdays, 48 hours on weekends.</p>
+            <a class="submit-btn" id="submitBtn" href="https://forms.zohopublic.in/FINUFF/form/finufflicense/formperma/aZpE2r_NDwOn9KR3hB83GJxmOkr5d6iDVOVuxlOAwEI" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;text-decoration:none;margin-top:6px">Request License</a>
+            <p class="submit-trust" style="margin:12px 0 0">Opens the FINUFF license request form in a new tab.</p>
           </div>
         </div>
       </div>
@@ -994,13 +946,6 @@
   }, {threshold:.1});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  var LICENSE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSdd6QC9-V5Cfw02hXL7Sb9X_oZ2XjEVDOAJ60FCy7_rQkjeBw/formResponse';
-  // Anti-spam: page-load timestamp for a minimum-fill-time check, same idea
-  // as the desktop app's own 800ms anti-bot guard on signup/login. A script
-  // that fills every field and POSTs immediately (skipping the honeypot
-  // above too, if it's smart enough to avoid off-screen fields) still can't
-  // fill a real multi-field form and submit inside ~1.5s the way a human
-  // filling name/email/mobile/DOB/security-question realistically can.
   document.getElementById('navlinks').querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){ document.getElementById('navlinks').classList.remove('open'); document.getElementById('navBurger').setAttribute('aria-expanded','false'); });
   });
@@ -1022,41 +967,6 @@
   }
   document.querySelectorAll('input[name="plan"]').forEach(function(r){ r.addEventListener('change', syncLicPriceBox); });
   syncLicPriceBox();
-
-  var formLoadedAt = Date.now();
-  document.getElementById('licenseForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    if (document.getElementById('f-hp').value || (Date.now() - formLoadedAt) < 1500) {
-      return; // silently drop -- no error shown, nothing to signal a bot script
-    }
-    var btn = document.getElementById('submitBtn');
-    btn.disabled = true; btn.textContent = 'Sending…';
-
-    var dob = document.getElementById('f-dob').value; // yyyy-mm-dd
-    var dobParts = dob.split('-');
-    var fd = new FormData();
-    fd.append('entry.2095907689', document.querySelector('input[name="plan"]:checked').value);
-    fd.append('entry.1701452935', document.querySelector('input[name="platform"]:checked').value);
-    fd.append('entry.1052124085', document.getElementById('f-email').value);
-    fd.append('entry.1595199714', document.getElementById('f-name').value);
-    fd.append('entry.189791548', document.getElementById('f-mobile').value);
-    fd.append('entry.1083406338', document.getElementById('f-security').value);
-    if(dobParts.length===3){
-      fd.append('entry.838791677_year', dobParts[0]);
-      fd.append('entry.838791677_month', dobParts[1]);
-      fd.append('entry.838791677_day', dobParts[2]);
-    }
-
-    fetch(LICENSE_FORM_ACTION, {method:'POST', mode:'no-cors', body: fd})
-      .then(function(){
-        document.getElementById('licenseForm').classList.add('hide');
-        document.getElementById('successState').classList.add('show');
-      })
-      .catch(function(){
-        btn.disabled = false; btn.textContent = 'Request License';
-        alert('Could not send your request — check your connection and try again.');
-      });
-  });
 </script>
 </body>
 </html>
