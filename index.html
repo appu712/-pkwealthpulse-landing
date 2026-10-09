@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FINUFF — Know What's Enough</title>
-<meta name="description" content="Your family's complete financial picture — privately stored on your device. Mutual funds, stocks, bonds, bank accounts, insurance, EPF, NPS, PPF, SSY, gold, property, business ownership and loans, consolidated into one net worth without uploading your portfolio to someone else's cloud.">
+<meta name="description" content="Know What's Enough. Your family's complete financial picture — privately stored on your device. Mutual funds, stocks, bonds, bank accounts, insurance, EPF, NPS, PPF, SSY, gold, property, business ownership and loans, consolidated into one net worth without uploading your portfolio to someone else's cloud.">
 <meta property="og:title" content="FINUFF — Know What's Enough">
 <link rel="canonical" href="https://finuff.com/">
 <meta property="og:url" content="https://finuff.com/">
@@ -33,7 +33,8 @@
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;}
   .brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:-.01em;font-size:1.08rem;}
   .brand img{width:40px;height:40px;border-radius:10px;}
-  .brand .fw{height:18px;width:auto;display:block;overflow:visible;--tx:var(--text);--ind:var(--accent);}
+  .brand .bw{display:flex;flex-direction:column;align-items:flex-start;gap:5px;line-height:1}.brand .bw small{font-size:.68rem;font-weight:600;letter-spacing:.05em;color:var(--accent)}
+  .brand .fw{height:22px;width:auto;display:block;overflow:visible;--tx:var(--text);--ind:var(--accent);}
   .navlinks{display:flex;gap:30px;font-size:.89rem;color:var(--muted);}
   .navlinks a{transition:color .15s;}
   .navlinks a:hover{color:var(--text);}
@@ -293,16 +294,21 @@
   .final-sec .chain b{color:var(--text);font-size:1.4rem;margin-top:8px;}
   .final-sec .tag{font-size:1.1rem;color:var(--muted);margin:0 0 32px;line-height:1.7;}
   .final-sec .tag strong{color:var(--accent);}
-#fw-splash{position:fixed;inset:0;z-index:99999;background:var(--bg);display:grid;place-items:center;pointer-events:none;transition:opacity .35s ease;}
+@keyframes fwHide{to{opacity:0;visibility:hidden}}
+@keyframes fwIn{from{opacity:0;transform:translateY(14px)}}
+.fw-in header.hero{animation:fwIn .55s ease backwards}
+#fw-splash{animation:fwHide .01s linear 6.5s forwards;position:fixed;inset:0;z-index:99999;background:var(--bg);display:grid;place-items:center;pointer-events:none;transition:opacity .35s ease;}
 #fw-splash .m{position:relative;width:min(560px,80vw);}#fw-splash .msg{position:absolute;bottom:14%;left:0;right:0;text-align:center;color:var(--tx3);letter-spacing:.02em;font-size:12px;}#fw-splash svg{display:block;width:100%;height:auto;}#fw-splash svg+svg{position:absolute;inset:0;}
 #fw-splash{--tx:var(--text);--ind:var(--accent);--tx3:var(--muted);}
 </style>
 </head>
 <body>
+<div id="fw-splash" aria-hidden="true"><div class="m" id="fw-sm"></div><div class="msg" id="fw-cap">Know What's Enough</div></div>
+
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="/" aria-label="FINUFF"><img src="assets/logo.png" alt=""><svg class="fw" viewBox="-10 -10 2452 720" role="img" aria-label="FINUFF"><g fill="none" stroke-width="90" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0)"><path d="M45 655V45M45 45H335M45 329H251.40000000000003" stroke="var(--tx)"/></g><g transform="translate(444)"><path d="M45 45V655" stroke="var(--tx)"/></g><g transform="translate(580)"><path d="M45 655V45L405 655V45" stroke="var(--tx)"/></g><g transform="translate(1094)"><path d="M90 329V475A135 135 0 0 0 360 475V329Z" fill="var(--ind)"/><path d="M45 45V475A180 180 0 0 0 405 475V45" stroke="var(--tx)"/></g><g transform="translate(1608)"><path d="M45 655V45M45 45H335M45 329H251.40000000000003" stroke="var(--tx)"/></g><g transform="translate(2052)"><path d="M45 655V45M45 45H335M45 329H251.40000000000003" stroke="var(--tx)"/></g></g></svg></a>
+    <a class="brand" href="/" aria-label="FINUFF"><img src="assets/logo.png" alt=""><span class="bw"><svg class="fw" viewBox="-10 -10 2520 720" role="img" aria-label="FINUFF" shape-rendering="geometricPrecision"><g fill="none" stroke-width="110" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0)"><path d="M55 645V55M55 55H325M55 329H241.40000000000003" stroke="var(--tx)"/></g><g transform="translate(450)"><path d="M55 55V645" stroke="var(--tx)"/></g><g transform="translate(630)"><path d="M55 645V55L395 645V55" stroke="var(--tx)"/></g><g transform="translate(1150)"><path d="M110 329V475A115 115 0 0 0 340 475V329Z" fill="var(--ind)"/><path d="M55 55V475A170 170 0 0 0 395 475V55" stroke="var(--tx)"/></g><g transform="translate(1670)"><path d="M55 645V55M55 55H325M55 329H241.40000000000003" stroke="var(--tx)"/></g><g transform="translate(2120)"><path d="M55 645V55M55 55H325M55 329H241.40000000000003" stroke="var(--tx)"/></g></g></svg><small>Know What's Enough</small></span></a>
     <div class="navlinks" id="navlinks">
       <a href="#features">Features</a>
       <a href="#security">Security</a>
@@ -933,7 +939,7 @@
 
 <footer>
   <div class="wrap footer-row">
-    <a class="brand" href="/" aria-label="FINUFF"><img src="assets/logo.png" alt=""><svg class="fw" viewBox="-10 -10 2452 720" role="img" aria-label="FINUFF"><g fill="none" stroke-width="90" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0)"><path d="M45 655V45M45 45H335M45 329H251.40000000000003" stroke="var(--tx)"/></g><g transform="translate(444)"><path d="M45 45V655" stroke="var(--tx)"/></g><g transform="translate(580)"><path d="M45 655V45L405 655V45" stroke="var(--tx)"/></g><g transform="translate(1094)"><path d="M90 329V475A135 135 0 0 0 360 475V329Z" fill="var(--ind)"/><path d="M45 45V475A180 180 0 0 0 405 475V45" stroke="var(--tx)"/></g><g transform="translate(1608)"><path d="M45 655V45M45 45H335M45 329H251.40000000000003" stroke="var(--tx)"/></g><g transform="translate(2052)"><path d="M45 655V45M45 45H335M45 329H251.40000000000003" stroke="var(--tx)"/></g></g></svg></a>
+    <a class="brand" href="/" aria-label="FINUFF"><img src="assets/logo.png" alt=""><span class="bw"><svg class="fw" viewBox="-10 -10 2520 720" role="img" aria-label="FINUFF" shape-rendering="geometricPrecision"><g fill="none" stroke-width="110" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0)"><path d="M55 645V55M55 55H325M55 329H241.40000000000003" stroke="var(--tx)"/></g><g transform="translate(450)"><path d="M55 55V645" stroke="var(--tx)"/></g><g transform="translate(630)"><path d="M55 645V55L395 645V55" stroke="var(--tx)"/></g><g transform="translate(1150)"><path d="M110 329V475A115 115 0 0 0 340 475V329Z" fill="var(--ind)"/><path d="M55 55V475A170 170 0 0 0 395 475V55" stroke="var(--tx)"/></g><g transform="translate(1670)"><path d="M55 645V55M55 55H325M55 329H241.40000000000003" stroke="var(--tx)"/></g><g transform="translate(2120)"><path d="M55 645V55M55 55H325M55 329H241.40000000000003" stroke="var(--tx)"/></g></g></svg><small>Know What's Enough</small></span></a>
     <p class="foot-copy">© 2026 FINUFF. All rights reserved.</p>
     <a href="https://get.microsoft.com/installer/download/9NGMX7VC3BJR?referrer=appbadge">
       <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get FINUFF from the Microsoft Store" style="height:44px;">
@@ -972,14 +978,15 @@
   document.querySelectorAll('input[name="plan"]').forEach(function(r){ r.addEventListener('change', syncLicPriceBox); });
   syncLicPriceBox();
 </script>
-<div id="fw-splash" aria-hidden="true"><div class="m" id="fw-sm"></div><div class="msg" id="fw-cap">Know What's Enough</div></div>
 <script>
 (function(){
   // Brand splash: letters fill up, then settle into the final mark with the U at "enough".
-  // Visual only (pointer-events:none); any click/key or 4.4s ends it. Skipped for reduced motion.
+  // Visual only (pointer-events:none); any click/key ends it; first open of the day plays in full (4.4s), later opens a short version (1.7s). Skipped for reduced motion.
   var el=document.getElementById('fw-splash');if(!el)return;
-  function done(){if(!el)return;var e=el;el=null;e.style.opacity=0;setTimeout(function(){e.remove()},400)}
-  try{if(sessionStorage.getItem('fwSplash')||(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)){el.remove();return}sessionStorage.setItem('fwSplash','1')}catch(_){}
+  function done(){if(!el)return;var e=el;el=null;document.body.classList.add('fw-in');e.style.opacity=0;setTimeout(function(){e.remove()},400)}
+  try{if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches){el.remove();return}
+  var mode='full';try{var dd=new Date(),dk=dd.getFullYear()+'-'+(dd.getMonth()+1)+'-'+dd.getDate();if(localStorage.getItem('fwSplashDay')===dk)mode='short';else localStorage.setItem('fwSplashDay',dk)}catch(_){}
+  var T=mode=='short'?{s:.05,st:.1,d:.4,x:.9,xd:.25,q:1.1,qd:.4,end:1.7,cap:1.3}:{s:.15,st:.28,d:.9,x:2.7,xd:.5,q:3.2,qd:.9,end:4.4,cap:3.9};}catch(_){}
   var H=700,mid=329,sw=72,gap=64,ws={F:380,I:sw,N:450,U:450},seq=['F','I','N','U','F','F'],pos=[],W=0;
   seq.forEach(function(l){pos.push(W);W+=ws[l]+gap});W-=gap;
   function P(l,w){var a=sw/2;
@@ -997,10 +1004,10 @@
   document.getElementById('fw-sm').innerHTML='<svg id="fwsb" viewBox="'+vb+'"><defs>'+D+'</defs>'+B+'</svg><svg id="fwsa" viewBox="'+vb+'" style="opacity:0">'+A+'</svg>';
   var lv=[.1,.28,.46,.64,.82,1],ease=function(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2},cl=function(x){return Math.max(0,Math.min(1,x))},t0=performance.now();
   function frame(now){if(!el)return;var t=(now-t0)/1000;
-    for(var i=0;i<6;i++){var h=(H+20)*lv[i]*ease(cl((t-(.15+i*.28))/.9)),r=document.getElementById('fwr'+i);r.setAttribute('y',H+10-h);r.setAttribute('height',h)}
-    var x=ease(cl((t-2.7)/.5));document.getElementById('fwsb').style.opacity=1-x;document.getElementById('fwsa').style.opacity=x;
-    var q=ease(cl((t-3.2)/.9)),lr=document.getElementById('fwlr');lr.setAttribute('y',H-(H-mid)*q);document.getElementById('fw-cap').style.opacity=1-cl((t-3.9)/.4);
-    if(t<4.4)requestAnimationFrame(frame);else done()}
+    for(var i=0;i<6;i++){var h=(H+20)*lv[i]*ease(cl((t-(T.s+i*T.st))/T.d)),r=document.getElementById('fwr'+i);r.setAttribute('y',H+10-h);r.setAttribute('height',h)}
+    var x=ease(cl((t-T.x)/T.xd));document.getElementById('fwsb').style.opacity=1-x;document.getElementById('fwsa').style.opacity=x;
+    var q=ease(cl((t-T.q)/T.qd)),lr=document.getElementById('fwlr');lr.setAttribute('y',H-(H-mid)*q);document.getElementById('fw-cap').style.opacity=1-cl((t-T.cap)/.4);
+    if(t<T.end)requestAnimationFrame(frame);else done()}
   requestAnimationFrame(frame);
   ['pointerdown','keydown'].forEach(function(ev){document.addEventListener(ev,done,{once:true,capture:true})});
 })();
