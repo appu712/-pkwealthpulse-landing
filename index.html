@@ -293,13 +293,16 @@
   .final-sec .chain b{color:var(--text);font-size:1.4rem;margin-top:8px;}
   .final-sec .tag{font-size:1.1rem;color:var(--muted);margin:0 0 32px;line-height:1.7;}
   .final-sec .tag strong{color:var(--accent);}
+#fw-splash{position:fixed;inset:0;z-index:99999;background:var(--bg);display:grid;place-items:center;pointer-events:none;transition:opacity .35s ease;}
+#fw-splash .m{position:relative;width:min(560px,80vw);}#fw-splash .msg{position:absolute;bottom:14%;left:0;right:0;text-align:center;color:var(--tx3);letter-spacing:.02em;font-size:12px;}#fw-splash svg{display:block;width:100%;height:auto;}#fw-splash svg+svg{position:absolute;inset:0;}
+#fw-splash{--tx:var(--text);--ind:var(--accent);--tx3:var(--muted);}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="/" aria-label="FINUFF"><img src="assets/logo.png" alt=""><svg class="fw" viewBox="-10 -10 2528 720" role="img" aria-label="FINUFF"><g fill="none" stroke-width="88" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0)"><path d="M44 656V44M44 44H336M44 329H252.40000000000003" stroke="var(--tx)"/></g><g transform="translate(456)"><path d="M44 44V656" stroke="var(--tx)"/></g><g transform="translate(620)"><path d="M44 656V44L406 656V44" stroke="var(--tx)"/></g><g transform="translate(1146)"><path d="M88 329V475A137 137 0 0 0 362 475V329Z" fill="var(--ind)"/><path d="M44 44V475A181 181 0 0 0 406 475V44" stroke="var(--tx)"/></g><g transform="translate(1672)"><path d="M44 656V44M44 44H336M44 329H252.40000000000003" stroke="var(--tx)"/></g><g transform="translate(2128)"><path d="M44 656V44M44 44H336M44 329H252.40000000000003" stroke="var(--tx)"/></g></g></svg></a>
+    <a class="brand" href="/" aria-label="FINUFF"><img src="assets/logo.png" alt=""><svg class="fw" viewBox="-10 -10 2452 720" role="img" aria-label="FINUFF"><g fill="none" stroke-width="90" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0)"><path d="M45 655V45M45 45H335M45 329H251.40000000000003" stroke="var(--tx)"/></g><g transform="translate(444)"><path d="M45 45V655" stroke="var(--tx)"/></g><g transform="translate(580)"><path d="M45 655V45L405 655V45" stroke="var(--tx)"/></g><g transform="translate(1094)"><path d="M90 329V475A135 135 0 0 0 360 475V329Z" fill="var(--ind)"/><path d="M45 45V475A180 180 0 0 0 405 475V45" stroke="var(--tx)"/></g><g transform="translate(1608)"><path d="M45 655V45M45 45H335M45 329H251.40000000000003" stroke="var(--tx)"/></g><g transform="translate(2052)"><path d="M45 655V45M45 45H335M45 329H251.40000000000003" stroke="var(--tx)"/></g></g></svg></a>
     <div class="navlinks" id="navlinks">
       <a href="#features">Features</a>
       <a href="#security">Security</a>
@@ -930,7 +933,7 @@
 
 <footer>
   <div class="wrap footer-row">
-    <a class="brand" href="/" aria-label="FINUFF"><img src="assets/logo.png" alt=""><svg class="fw" viewBox="-10 -10 2528 720" role="img" aria-label="FINUFF"><g fill="none" stroke-width="88" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0)"><path d="M44 656V44M44 44H336M44 329H252.40000000000003" stroke="var(--tx)"/></g><g transform="translate(456)"><path d="M44 44V656" stroke="var(--tx)"/></g><g transform="translate(620)"><path d="M44 656V44L406 656V44" stroke="var(--tx)"/></g><g transform="translate(1146)"><path d="M88 329V475A137 137 0 0 0 362 475V329Z" fill="var(--ind)"/><path d="M44 44V475A181 181 0 0 0 406 475V44" stroke="var(--tx)"/></g><g transform="translate(1672)"><path d="M44 656V44M44 44H336M44 329H252.40000000000003" stroke="var(--tx)"/></g><g transform="translate(2128)"><path d="M44 656V44M44 44H336M44 329H252.40000000000003" stroke="var(--tx)"/></g></g></svg></a>
+    <a class="brand" href="/" aria-label="FINUFF"><img src="assets/logo.png" alt=""><svg class="fw" viewBox="-10 -10 2452 720" role="img" aria-label="FINUFF"><g fill="none" stroke-width="90" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0)"><path d="M45 655V45M45 45H335M45 329H251.40000000000003" stroke="var(--tx)"/></g><g transform="translate(444)"><path d="M45 45V655" stroke="var(--tx)"/></g><g transform="translate(580)"><path d="M45 655V45L405 655V45" stroke="var(--tx)"/></g><g transform="translate(1094)"><path d="M90 329V475A135 135 0 0 0 360 475V329Z" fill="var(--ind)"/><path d="M45 45V475A180 180 0 0 0 405 475V45" stroke="var(--tx)"/></g><g transform="translate(1608)"><path d="M45 655V45M45 45H335M45 329H251.40000000000003" stroke="var(--tx)"/></g><g transform="translate(2052)"><path d="M45 655V45M45 45H335M45 329H251.40000000000003" stroke="var(--tx)"/></g></g></svg></a>
     <p class="foot-copy">© 2026 FINUFF. All rights reserved.</p>
     <a href="https://get.microsoft.com/installer/download/9NGMX7VC3BJR?referrer=appbadge">
       <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get FINUFF from the Microsoft Store" style="height:44px;">
@@ -968,6 +971,39 @@
   }
   document.querySelectorAll('input[name="plan"]').forEach(function(r){ r.addEventListener('change', syncLicPriceBox); });
   syncLicPriceBox();
+</script>
+<div id="fw-splash" aria-hidden="true"><div class="m" id="fw-sm"></div><div class="msg" id="fw-cap">Know What's Enough</div></div>
+<script>
+(function(){
+  // Brand splash: letters fill up, then settle into the final mark with the U at "enough".
+  // Visual only (pointer-events:none); any click/key or 4.4s ends it. Skipped for reduced motion.
+  var el=document.getElementById('fw-splash');if(!el)return;
+  function done(){if(!el)return;var e=el;el=null;e.style.opacity=0;setTimeout(function(){e.remove()},400)}
+  try{if(sessionStorage.getItem('fwSplash')||(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)){el.remove();return}sessionStorage.setItem('fwSplash','1')}catch(_){}
+  var H=700,mid=329,sw=72,gap=64,ws={F:380,I:sw,N:450,U:450},seq=['F','I','N','U','F','F'],pos=[],W=0;
+  seq.forEach(function(l){pos.push(W);W+=ws[l]+gap});W-=gap;
+  function P(l,w){var a=sw/2;
+    if(l=='F')return 'M'+a+' '+(H-a)+'V'+a+'M'+a+' '+a+'H'+(w-a)+'M'+a+' '+mid+'H'+(w*.78-a);
+    if(l=='I')return 'M'+a+' '+a+'V'+(H-a);
+    if(l=='N')return 'M'+a+' '+(H-a)+'V'+a+'L'+(w-a)+' '+(H-a)+'V'+a;
+    var r=(w-2*a)/2;return 'M'+a+' '+a+'V'+(H-a-r)+'A'+r+' '+r+' 0 0 0 '+(w-a)+' '+(H-a-r)+'V'+a}
+  var st=' fill="none" stroke-width="'+sw+'" stroke-linecap="round" stroke-linejoin="round"',vb='-10 -10 '+(W+20)+' '+(H+20),B='',A='',D='';
+  seq.forEach(function(l,i){var w=ws[l],p=P(l,w);
+    D+='<clipPath id="fwb'+i+'"><rect id="fwr'+i+'" x="-10" y="'+H+'" width="'+(w+20)+'" height="0"/></clipPath>';
+    B+='<g transform="translate('+pos[i]+')"><path d="'+p+'"'+st+' stroke="var(--tx)" opacity=".2"/><path d="'+p+'"'+st+' stroke="var(--ind)" clip-path="url(#fwb'+i+')"/></g>';
+    var g='<path d="'+p+'"'+st+' stroke="var(--tx)"/>';
+    if(l=='U'){var ri=(w-2*sw)/2,cy=H-sw-ri;g='<clipPath id="fwl"><rect id="fwlr" x="0" y="'+H+'" width="'+w+'" height="'+H+'"/></clipPath><path d="M'+sw+' '+(mid-1)+'V'+cy+'A'+ri+' '+ri+' 0 0 0 '+(w-sw)+' '+cy+'V'+(mid-1)+'Z" fill="var(--ind)" clip-path="url(#fwl)"/>'+g}
+    A+='<g transform="translate('+pos[i]+')">'+g+'</g>'});
+  document.getElementById('fw-sm').innerHTML='<svg id="fwsb" viewBox="'+vb+'"><defs>'+D+'</defs>'+B+'</svg><svg id="fwsa" viewBox="'+vb+'" style="opacity:0">'+A+'</svg>';
+  var lv=[.1,.28,.46,.64,.82,1],ease=function(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2},cl=function(x){return Math.max(0,Math.min(1,x))},t0=performance.now();
+  function frame(now){if(!el)return;var t=(now-t0)/1000;
+    for(var i=0;i<6;i++){var h=(H+20)*lv[i]*ease(cl((t-(.15+i*.28))/.9)),r=document.getElementById('fwr'+i);r.setAttribute('y',H+10-h);r.setAttribute('height',h)}
+    var x=ease(cl((t-2.7)/.5));document.getElementById('fwsb').style.opacity=1-x;document.getElementById('fwsa').style.opacity=x;
+    var q=ease(cl((t-3.2)/.9)),lr=document.getElementById('fwlr');lr.setAttribute('y',H-(H-mid)*q);document.getElementById('fw-cap').style.opacity=1-cl((t-3.9)/.4);
+    if(t<4.4)requestAnimationFrame(frame);else done()}
+  requestAnimationFrame(frame);
+  ['pointerdown','keydown'].forEach(function(ev){document.addEventListener(ev,done,{once:true,capture:true})});
+})();
 </script>
 </body>
 </html>
